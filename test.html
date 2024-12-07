@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jahslime777</title>
+  <title>Profile Site</title>
   <style>
     /* Reset margins and ensure full height */
     body, html {
@@ -11,6 +11,8 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
+      background: url('https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/scarface.jpg') no-repeat center center fixed; /* Add the custom background image */
+      background-size: cover;
     }
 
     /* Enter Screen Styling */
@@ -19,7 +21,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: black;
+      background: rgba(0, 0, 0, 0.8); /* Dark overlay for better visibility of text */
       color: white;
       font-size: 24px;
       cursor: pointer;
@@ -68,6 +70,12 @@
   </style>
 </head>
 <body>
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/che%20-%20Japan%20%5BAudio%5D%20-%20Bxbza%20(youtube).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <!-- Enter Screen -->
   <div id="enter-screen">
     <h1>click to enter...</h1>
@@ -86,13 +94,19 @@
   </div>
 
   <script>
-    // JavaScript for Enter Screen Transition
+    // JavaScript for Enter Screen Transition and Music
     document.getElementById('enter-screen').addEventListener('click', function () {
       // Hide the enter screen
       document.getElementById('enter-screen').style.display = 'none';
 
       // Show the main content
       document.getElementById('main-content').style.display = 'block';
+
+      // Play the background music
+      const music = document.getElementById('background-music');
+      music.play().catch((error) => {
+        console.error('Autoplay blocked: ', error);
+      });
     });
   </script>
 </body>
