@@ -3,66 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scarface Tribute</title>
+  <title>jahslime777</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN -->
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
-      color: white;
-      background: black;
+      background: url('https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/scarface.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Enter Screen Styling */
+    #enter-screen {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #main-content {
+      display: none;
+      height: 100vh;
     }
     .container {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
-    .quote {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    .scarface {
-      font-size: 5rem;
-      color: red;
-      font-weight: bold;
-    }
+
     .profile-card {
-      margin-top: 30px;
-      display: inline-block;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 10px;
-      padding: 20px;
+      padding: 50px;
       text-align: center;
+      backdrop-filter: blur(10px); /* blurr paks omg */
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      color: white;
     }
+
     .profile-card img {
-      border-radius: 50%;
       width: 100px;
       height: 100px;
-      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1px;
     }
-    .profile-card a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      margin: 5px;
+
+    .profile-card h2 {
+      margin-top: 1px;
+      margin-bottom: 2px;
     }
-    .profile-card a:hover {
-      text-decoration: underline;
+
+    /* Style for icons */
+    .profile-card .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .profile-card i {
+      font-size: 30px;
+      color: red;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .profile-card i:hover {
+      color: #3575d6;
+    }
+
+    footer {
+      font-size: 14px;
+      margin-top: 0px;
+      margin-bottom: 1px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="quote">"The world is yours"</div>
-    <div class="scarface">SCARFACE</div>
-    <div class="profile-card">
-      <img src="https://r2.guns.lol/a0ac5083-0f78-4a0d-986a-564421d3a7dd.jpg" alt="Profile">
-      <h3>jahpx</h3>
-      <a href="https://github.com/jahhsm" target="_blank">GitHub</a>
-      <a href="https://discord.com/invite/T23CVnphYu" target="_blank">Discord</a>
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source id="audio-source" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Enter Screen -->
+  <div id="enter-screen">
+    <h1>click to enter...</h1>
+  </div>
+  <div id="main-content">
+    <div class="container">
+      <div class="profile-card">
+        <img src="https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/xaviersobased.jpg" alt="Profile">
+        <h2>@jahslime777</h2>
+        <footer>Billionaire. Playboy. Philanthropist. Inventor.</footer>
+        <div class="social-icons">
+          <a href="https://discord.com/invite/T23CVnphYu" rel="noopener">
+            <i class="fab fa-discord"></i> <!-- discord icon -->
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+     const audioUrls = [
+      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/che%20-%20Japan%20%5BAudio%5D%20-%20Bxbza%20(youtube).mp3", /* Che - Japan */
+      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/Celebrate%20-%201oneam%20(youtube).mp3", /* 1oneam - Celebrate */
+      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/softer%20(cranes)%20%5BTubeRipper.com%5D.mp3", /* xaviersobased - Softer */
+      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/youtube_I4MMMrKWBdE_audio.mp3", /* Che - CSPWDT */
+      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/-%20Che.mp3", /* Che - ????? */
+      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/Sol%20-%20Che.mp3" /* Che - Sol */
+    ];
+    function getRandomAudio() {
+      const randomIndex = Math.floor(Math.random() * audioUrls.length);
+      return audioUrls[randomIndex];
+    }
+    document.getElementById('enter-screen').addEventListener('click', function () {
+      document.getElementById('enter-screen').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+
+      const music = document.getElementById('background-music');
+      const audioSource = document.getElementById('audio-source');
+      audioSource.src = getRandomAudio();
+      music.load();
+      music.play().catch((error) => {
+        console.error('Autoplay blocked: ', error);
+      });
+    });
+  </script>
 </body>
 </html>
