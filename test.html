@@ -50,11 +50,6 @@
       color: white;
     }
 
-    .container {
-      text-align: center;
-      display: none; /* Hide content initially */
-    }
-
     .quote {
       font-size: 2rem;
       margin-bottom: 20px;
@@ -66,17 +61,23 @@
       font-weight: bold;
     }
 
+    .container {
+      display: flex; /* Flexbox for centering */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      height: 100vh; /* Full viewport height */
+    }
+    
     .profile-card {
       position: relative;
-      margin-top: 50px;
-      display: inline-block;
       padding: 20px;
       text-align: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px); /* Apply the blur effect */
       background: rgba(0, 0, 0, 0.6);
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
+
 
     .profile-card img {
       border-radius: 50%;
