@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scarface Tribute</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url('custom-background.png') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .quote {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .scarface {
+      font-size: 5rem;
+      color: red;
+      font-weight: bold;
+    }
+
+    .profile-card {
+      position: relative;
+      margin-top: 30px;
+      display: inline-block;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px); /* Apply the blur effect */
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .profile-card img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .profile-card a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      margin: 5px;
+    }
+
+    .profile-card a:hover {
+      text-decoration: underline;
+    }
+
+    audio {
+      display: none; /* Keep the player hidden */
+    }
+
+    .play-button {
+      color: white;
+      margin-top: 15px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .play-button:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="quote">"The world is yours"</div>
+    <div class="scarface">SCARFACE</div>
+    <div class="profile-card">
+      <img src="profile-pic.jpg" alt="Profile">
+      <h3>jahpx</h3>
+      <a href="https://github.com/username" target="_blank">GitHub</a>
+      <a href="https://discord.com" target="_blank">Discord</a>
+      <div class="play-button" onclick="toggleMusic()">🎵 Play/Pause Music</div>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="your-music-file.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const music = document.getElementById('background-music');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
+    }
+  </script>
+</body>
+</html>
