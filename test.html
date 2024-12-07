@@ -61,15 +61,20 @@
       font-weight: bold;
     }
 
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%; /* Ensure the body and html span the full height of the viewport */
+    }
+    
     .container {
-      display: flex; /* Flexbox for centering */
+      display: flex; /* Use flexbox */
       justify-content: center; /* Center horizontally */
       align-items: center; /* Center vertically */
       height: 100vh; /* Full viewport height */
     }
     
     .profile-card {
-      position: relative;
       padding: 20px;
       text-align: center;
       backdrop-filter: blur(10px); /* Apply the blur effect */
@@ -77,6 +82,7 @@
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     }
+
 
 
     .profile-card img {
@@ -107,15 +113,16 @@
     <h1>click to enter...</h1>
     <button onclick="enterSite()">Enter</button>
   </div>
-
-  <div class="container">
-    <div class="profile-card">
-      <img src="https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/xaviersobased.jpg" alt="Profile">
-      <h3>jahpx</h3>
-      <a href="https://github.com/jahhsm" target="_blank">GitHub</a>
-      <a href="https://discord.com/invite/T23CVnphYu" target="_blank">Discord</a>
+  <body>
+    <div class="container">
+      <div class="profile-card">
+        <img src="https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/xaviersobased.jpg" alt="Profile">
+        <h3>jahpx</h3>
+        <a href="https://github.com/jahhsm" target="_blank">GitHub</a>
+        <a href="https://discord.com/invite/T23CVnphYu" target="_blank">Discord</a>
+      </div>
     </div>
-  </div>
+  </body>
 
   <!-- Background Music -->
   <audio id="background-music" autoplay muted loop>
