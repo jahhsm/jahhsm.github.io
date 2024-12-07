@@ -3,77 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jahslime777</title>
+  <title>Profile Site</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: white;
-      background: url('https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/scarface.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 10;
-    }
-
-    .overlay h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .overlay button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .overlay button:hover {
-      background: gray;
-      color: white;
-    }
-
-    .quote {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .scarface {
-      font-size: 5rem;
-      color: red;
-      font-weight: bold;
-    }
-
+    /* Reset margins and ensure full height */
     body, html {
       margin: 0;
       padding: 0;
-      height: 100%; /* Ensure the body and html span the full height of the viewport */
+      height: 100%;
+      font-family: Arial, sans-serif;
     }
-    
+
+    /* Enter Screen Styling */
+    #enter-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #main-content {
+      display: none; /* Initially hidden */
+      height: 100vh;
+    }
+
+    /* Main Content Container */
     .container {
-      display: flex; /* Use flexbox */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      height: 100vh; /* Full viewport height */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
-    
+
     .profile-card {
       padding: 20px;
       text-align: center;
@@ -81,73 +45,55 @@
       background: rgba(0, 0, 0, 0.6);
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      color: white;
     }
 
-
-
     .profile-card img {
-      border-radius: 50%;
       width: 100px;
       height: 100px;
-      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
     }
 
     .profile-card a {
-      color: white;
+      display: block;
+      margin-top: 10px;
+      color: #00bfff;
       text-decoration: none;
-      font-size: 1rem;
-      margin: 5px;
     }
 
     .profile-card a:hover {
       text-decoration: underline;
     }
-
-    audio {
-      display: none; /* Keep the player hidden */
-    }
   </style>
 </head>
 <body>
-  <div class="overlay">
+  <!-- Enter Screen -->
+  <div id="enter-screen">
     <h1>click to enter...</h1>
-    <button onclick="enterSite()">Enter</button>
   </div>
-  <body>
+
+  <!-- Main Content -->
+  <div id="main-content">
     <div class="container">
       <div class="profile-card">
-        <img src="https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/xaviersobased.jpg" alt="Profile">
+        <img src="https://via.placeholder.com/100" alt="Profile">
         <h3>jahpx</h3>
-        <a href="https://github.com/jahhsm" target="_blank">GitHub</a>
-        <a href="https://discord.com/invite/T23CVnphYu" target="_blank">Discord</a>
+        <a href="https://github.com/username" target="_blank">GitHub</a>
+        <a href="https://discord.com" target="_blank">Discord</a>
       </div>
     </div>
-  </body>
-
-  <!-- Background Music -->
-  <audio id="background-music" autoplay muted loop>
-    <source src="https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/Money%20Over%20All.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  </div>
 
   <script>
-    function enterSite() {
-      const overlay = document.querySelector('.overlay');
-      const container = document.querySelector('.container');
-      const music = document.getElementById('background-music');
-
-      // Hide the overlay
-      overlay.style.display = 'none';
+    // JavaScript for Enter Screen Transition
+    document.getElementById('enter-screen').addEventListener('click', function () {
+      // Hide the enter screen
+      document.getElementById('enter-screen').style.display = 'none';
 
       // Show the main content
-      container.style.display = 'block';
-
-      // Unmute and play music
-      music.muted = false;
-      music.play().catch(error => {
-        console.error('Error playing music:', error);
-      });
-    }
+      document.getElementById('main-content').style.display = 'block';
+    });
   </script>
 </body>
 </html>
