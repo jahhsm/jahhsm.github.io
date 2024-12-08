@@ -132,6 +132,8 @@
       const audioSource = document.getElementById('audio-source');
       audioSource.src = getRandomAudio();
       music.load();
+      music.volume = 0.3;
+      
       music.play().catch((error) => {
         console.error('Autoplay blocked: ', error);
       });
