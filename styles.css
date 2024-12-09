@@ -78,8 +78,8 @@ main {
     font-size: 1em;
 }
 #logo {
-    width: 300px; /* Set the width of your logo */
-    height: 51px; /* Keep the aspect ratio */
+    width: auto; /* Set the width of your logo */
+    height: auto; /* Keep the aspect ratio */
     display: block;
     margin: 0 auto; /* Center the logo horizontally */
 }
