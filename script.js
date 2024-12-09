@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search");
     const fileContainer = document.getElementById("file-container");
     const tagsContainer = document.getElementById("tags");
-
+    const selectedTags = new Set();
     fetch("files.json")
         .then(response => response.json())
         .then(data => {
@@ -65,15 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             function filterByTag(tag) {
-                const filteredFiles = files.filter(file => file.tags.includes(tag));
-                renderFiles(filteredFiles);
+                if (selectedTags.has(tag)) {
+                    selectedTags.delete(tag);
+                } else {
+                    selectedTags.add(tag);
+                }
                 document.querySelectorAll("#tags button").forEach(button => {
-                    if (button.textContent === tag) {
-                        button.classList.add("selected");
-                    } else {
-                        button.classList.remove("selected");
-                    }
+                    button.classList.toggle("selected", selectedTags.has(button.textContent));
                 });
+                const filteredFiles = files.filter(file =>
+                    [...selectedTags].every(selectedTag => file.tags.includes(selectedTag))
+                );
+                renderFiles(filteredFiles);
+                }
             }
         })
         .catch(error => console.error("Error loading files:", error));
