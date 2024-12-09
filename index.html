@@ -153,13 +153,10 @@
      /* "https://github.com/jahhsm/Assets/raw/refs/heads/main/CartiShirt.mp4", */
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/Fantasies.mp4"
     ];
-
-    // Function to select a random audio URL
     function getRandomAudio() {
       const randomIndex = Math.floor(Math.random() * videoUrls.length);
       return videoUrls[randomIndex]; /* video -> mp3 omg! */
     }
-    // JavaScript for Enter Screen Transition and Music
     document.getElementById('enter-screen').addEventListener('click', function () {
       document.getElementById('enter-screen').style.display = 'none';
       document.getElementById('main-content').style.display = 'block';
@@ -191,7 +188,6 @@
       music.load();
       video.load();
       document.body.style.backgroundColor = "transparent";
-      console.warn()
         music.volume = 0.8
         video.play().catch((error) => {
             console.error("Video couldn't play? ", error);
