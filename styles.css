@@ -98,3 +98,56 @@ main {
     color: #bbb;
     line-height: 1.5;
 }
+footer {
+    background-color: #1f1f38; /* Dark background color */
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.discord-btn {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #5865F2; /* Discord's brand color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.discord-btn:hover {
+    background-color: #4752c4;
+}
+
+.discord-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 30px; /* Adjust icon size */
+    height: 30px;
+    margin: 0 5px;
+    filter: brightness(0) invert(1); /* Make icons white */
+    transition: filter 0.3s ease;
+}
+
+.social-icons a img:hover {
+    filter: brightness(0.8) invert(1); /* Dim the icon on hover */
+}
