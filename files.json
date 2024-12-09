@@ -89,11 +89,43 @@
     },
     {
         "name": "Harley Hitter",
-        "tags": ["8.51"],
+        "tags": ["8.51", "pickaxe"],
         "image": "https://i.ibb.co/WvX6VFn/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1GEDhGtqfnOFfRv1BEKTuUm0r10ZKkMF1",
         "description": "Swaps MARSHY SMASHER"
+    },
+    {
+        "name": "CJ",
+        "tags": ["8.51", "skin"],
+        "image": "https://i.ibb.co/9vSm93b/latest.webp",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1fSeF80OoKX_MlrktCO_zZxDt3GwAWWQF",
+        "description": "Swaps Hybrid"
+    },
+    {
+        "name": "Bald Travis Scott",
+        "tags": ["8.51", "skin"],
+        "image": "https://fakeimg.pl/500x500?text=nothing+here&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1XLsa-BgeG9AQyfNNUWdbdAf6em8sWsSy",
+        "description": "Swaps Hybrid"
+    },
+    {
+        "name": "Echo",
+        "tags": ["8.51", "skin"],
+        "image": "https://i.ibb.co/BZZ9chs/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1id_ZIluGeQTQPXN6BAKIcozXEIVdEdG6",
+        "description": "Swaps Blackheart"
+    },
+    {
+        "name": "Raider's Revenge",
+        "tags": ["8.51", "pickaxe"],
+        "image": "https://i.ibb.co/f1RJZRr/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1id_ZIluGeQTQPXN6BAKIcozXEIVdEdG6",
+        "description": "Swaps Default Pickaxe"
     },
     {
         "name": "Skeleton Skin",
