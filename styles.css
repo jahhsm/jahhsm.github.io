@@ -78,7 +78,7 @@ main {
     font-size: 1em;
 }
 #logo {
-    width: auto; /* Set the width of your logo */
+    width: 300px; /* Set the width of your logo */
     height: auto; /* Keep the aspect ratio */
     display: block;
     margin: 0 auto; /* Center the logo horizontally */
