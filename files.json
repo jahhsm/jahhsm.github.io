@@ -32,6 +32,13 @@
         "description": "Swaps Default Pickaxe"
     },
     {
+        "name": "Arena",
+        "tags": ["all", "8.51"],
+        "image": "https://biinou.serv00.net/server/Assets/Arena.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1vqNj_x-jpqcE19aZlEjKRn5iqj8qRMOr",
+        "description": "Gives Arena UI, swaps?? Solos."
+    {
         "name": "Skeleton Skin",
         "tags": ["all", "premium", "skin", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
