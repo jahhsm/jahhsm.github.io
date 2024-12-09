@@ -147,13 +147,14 @@
     const videoUrls = [
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/SnapTik_App_7429608308618611969-HD.mov",
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/softer%20(cranes).mp4",
-      "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20valentine_v720P.mp4",
+      "https://biinou.serv00.net/server/Assets/SaysoSays.mp4",
+     /* "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20valentine_v720P.mp4", */
      /* "https://github.com/jahhsm/Assets/raw/refs/heads/main/Wednesday.mp4", */
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/LongTime.mp4",
      /* "https://github.com/jahhsm/Assets/raw/refs/heads/main/CartiShirt.mp4", */
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/Fantasies.mp4"
     ];
-    function getRandomAudio() {
+    function okskidder() {
       const randomIndex = Math.floor(Math.random() * videoUrls.length);
       return videoUrls[randomIndex]; /* video -> mp3 omg! */
     }
@@ -178,7 +179,7 @@
         viewNumber.textContent = "couldn't load";
       });
 
-      const trim = getRandomAudio();
+      const trim = okskidder();
       const music = document.getElementById('background-music');
         const audioSource = document.getElementById('audio-source');
       const video = document.getElementById('background-video');
