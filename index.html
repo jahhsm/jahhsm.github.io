@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" href="https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Icon.png" type="image/png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>jahslime777</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
-    /* Reset margins and ensure full height */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden; /* Hide any overflow to avoid scrollbars */
+      overflow: hidden;
+      background-color: black;
     }
-
-    /* Video Background Styling */
     #background-video {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the video covers the entire screen */
-      z-index: -1; /* Places the video behind all other content */
+      object-fit: cover;
+      z-index: -1; 
     }
-
-    /* Enter Screen Styling */
     #enter-screen {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.8); /* Dark overlay for better visibility of text */
+      background: rgba(0, 0, 0, 0.8);
       color: white;
       font-size: 24px;
       cursor: pointer;
@@ -40,11 +37,9 @@
     }
 
     #main-content {
-      display: none; /* Initially hidden */
+      display: none;
       height: 100vh;
     }
-
-    /* Main Content Container */
     .container {
       display: flex;
       justify-content: center;
@@ -74,29 +69,36 @@
       margin-top: 1px;
       margin-bottom: 2px;
     }
-
-    /* Style for icons */
     .profile-card .social-icons {
       display: flex;
       justify-content: center;
       gap: 15px;
     }
 
-    .profile-card i {
+    .profile-card .social-icons i {
       font-size: 30px;
       color: red;
       cursor: pointer;
       transition: color 0.3s;
     }
-
-    .profile-card i:hover {
-      color: #3575d6;
+    .profile-card .social-icons i:hover {
+        color: #3575d6;
     }
 
     footer {
       font-size: 14px;
       margin-top: 0px;
       margin-bottom: 1px;
+    }
+    .profile-card footer {
+      position: relative;
+    }
+    #view-count {
+        font-size: 14px;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 5px 10px;
+        border-radius: 5px;
     }
   </style>
 </head>
@@ -117,12 +119,18 @@
       <div class="profile-card">
         <img src="https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/xaviersobased.jpg" alt="Profile">
         <h2>@jahslime777</h2>
-        <footer>Billionaire. Playboy. Philanthropist. Inventor.</footer>
+        <footer>
+            Billionaire. Playboy. Philanthropist. Inventor.
+            <div id="view-count">
+                <i class="fas fa-eye"></i>
+                <span id="view-number">Loading...</span>
+              </div>
+        </footer>
         <div class="social-icons">
           <a href="https://discord.com/invite/T23CVnphYu" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-discord"></i>
           </a>
-          <a href="file:///C:/Users/kickb/OneDrive/Desktop/download.html" target="_blank" rel="noopener noreferrer">
+          <a href="https://jahhsm.online/downloads" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-readme"></i>
           </a>
         </div>
@@ -131,15 +139,18 @@
   </div>
 
   <script>
-    // Array of audio URLs
+    // removed
     const audioUrls = [
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/SnapTik_App_7429608308618611969-HD.mp3"
     ];
     const videoUrls = [
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/SnapTik_App_7429608308618611969-HD.mov",
       "https://github.com/jahhsm/Assets/raw/refs/heads/main/softer%20(cranes).mp4",
-      "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20che%20%20japan_360p.mp4",
-      "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20valentine_v720P.mp4"
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20valentine_v720P.mp4",
+     /* "https://github.com/jahhsm/Assets/raw/refs/heads/main/Wednesday.mp4", */
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/LongTime.mp4",
+     /* "https://github.com/jahhsm/Assets/raw/refs/heads/main/CartiShirt.mp4", */
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/Fantasies.mp4"
     ];
 
     // Function to select a random audio URL
@@ -149,44 +160,44 @@
     }
     // JavaScript for Enter Screen Transition and Music
     document.getElementById('enter-screen').addEventListener('click', function () {
-      // Hide the enter screen
       document.getElementById('enter-screen').style.display = 'none';
-
-      // Show the main content
       document.getElementById('main-content').style.display = 'block';
-
-      // Get a random audio URL and set it as the source
-      // URL of the PHP API
-      fetch("https://biinou.serv00.net/server/views/Views.php")
-        .then(response => {
-            if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log("View count data:", data);
-            const footer = document.querySelector('footer');
-            footer.innerHTML += `<p>Total Views: ${data.count}</p>`;
-        })
-        .catch(error => {
-            console.error("Error fetching view count:", error);
-        });
-
-
-      const music = document.getElementById('background-music');
-      const audioSource = document.getElementById('audio-source');
-      const video = document.getElementById('background-video')
-      const videoSource = document.getElementById('video-source')
-      audioSource.src = getRandomAudio(); // Set the random audio source
-      videoSource.src = audioSource.src
-      // Play the background music
-      music.load(); // Reload the audio element to apply the new source
-      video.load()
-      video.play()
-      music.play().catch((error) => {
-        console.error('Autoplay blocked: ', error);
+      const apiUrl = "https://biinou.serv00.net/server/views/Views.php"
+      fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const viewNumber = document.getElementById('view-number');
+        viewNumber.textContent = data.count;
+      })
+      .catch(error => {
+        console.error("Error fetching view count:", error);
+        const viewNumber = document.getElementById('view-number');
+        viewNumber.textContent = "couldn't load";
       });
+
+      const trim = getRandomAudio();
+      const music = document.getElementById('background-music');
+        const audioSource = document.getElementById('audio-source');
+      const video = document.getElementById('background-video');
+        const videoSource = document.getElementById('video-source');
+      audioSource.src = trim;
+      videoSource.src = trim;
+      music.load();
+      video.load();
+      document.body.style.backgroundColor = "transparent";
+      console.warn()
+        music.volume = 0.8
+        video.play().catch((error) => {
+            console.error("Video couldn't play? ", error);
+        });
+        music.play().catch((error) => {
+            console.error("Audio couldn't play? ", error);
+        });
     });
   </script>
 </body>
