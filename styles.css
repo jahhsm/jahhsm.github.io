@@ -78,10 +78,10 @@ main {
     font-size: 1em;
 }
 #logo {
-    width: auto; /* Set the width of your logo */
-    height: auto; /* Keep the aspect ratio */
+    width: 490px;
+    height: auto;
     display: block;
-    margin: 0 auto; /* Center the logo horizontally */
+    margin: 0 auto;
 }
 #tags button:hover {
     background-color: #666;
