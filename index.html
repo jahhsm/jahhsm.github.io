@@ -6,13 +6,24 @@
   <title>jahslime777</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome CDN -->
   <style>
+    /* Reset margins and ensure full height */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      background: url('https://raw.githubusercontent.com/jahhsm/jahhsm.github.io/refs/heads/main/Images%20and%20Audios/scarface.jpg') no-repeat center center fixed;
-      background-size: cover;
+      overflow: hidden; /* Hide any overflow to avoid scrollbars */
+    }
+
+    /* Video Background Styling */
+    #background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the entire screen */
+      z-index: -1; /* Places the video behind all other content */
     }
 
     /* Enter Screen Styling */
@@ -21,21 +32,25 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.8); /* Dark overlay for better visibility of text */
       color: white;
       font-size: 24px;
       cursor: pointer;
+      z-index: 1;
     }
 
     #main-content {
-      display: none;
+      display: none; /* Initially hidden */
       height: 100vh;
     }
+
+    /* Main Content Container */
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100%;
+      z-index: 1;
     }
 
     .profile-card {
@@ -86,13 +101,14 @@
   </style>
 </head>
 <body>
-  <!-- Background Music -->
+  <video id="background-video" autoplay loop muted>
+    <source id="video-source" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <audio id="background-music" loop>
     <source id="audio-source" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-
-  <!-- Enter Screen -->
   <div id="enter-screen">
     <h1>click to enter...</h1>
   </div>
@@ -103,8 +119,11 @@
         <h2>@jahslime777</h2>
         <footer>Billionaire. Playboy. Philanthropist. Inventor.</footer>
         <div class="social-icons">
-          <a href="https://discord.com/invite/T23CVnphYu" rel="noopener">
-            <i class="fab fa-discord"></i> <!-- discord icon -->
+          <a href="https://discord.com/invite/T23CVnphYu" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="file:///C:/Users/kickb/OneDrive/Desktop/download.html" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-readme"></i>
           </a>
         </div>
       </div>
@@ -112,28 +131,59 @@
   </div>
 
   <script>
-     const audioUrls = [
-      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/che%20-%20Japan%20%5BAudio%5D%20-%20Bxbza%20(youtube).mp3", /* Che - Japan */
-      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/Celebrate%20-%201oneam%20(youtube).mp3", /* 1oneam - Celebrate */
-      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/softer%20(cranes)%20%5BTubeRipper.com%5D.mp3", /* xaviersobased - Softer */
-      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/youtube_I4MMMrKWBdE_audio.mp3", /* Che - CSPWDT */
-      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/-%20Che.mp3", /* Che - ????? */
-      "https://github.com/jahhsm/jahhsm.github.io/raw/refs/heads/main/Images%20and%20Audios/Sol%20-%20Che.mp3" /* Che - Sol */
+    // Array of audio URLs
+    const audioUrls = [
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/SnapTik_App_7429608308618611969-HD.mp3"
     ];
+    const videoUrls = [
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/SnapTik_App_7429608308618611969-HD.mov",
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/softer%20(cranes).mp4",
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20che%20%20japan_360p.mp4",
+      "https://github.com/jahhsm/Assets/raw/refs/heads/main/y2mate.com%20-%20valentine_v720P.mp4"
+    ];
+
+    // Function to select a random audio URL
     function getRandomAudio() {
-      const randomIndex = Math.floor(Math.random() * audioUrls.length);
-      return audioUrls[randomIndex];
+      const randomIndex = Math.floor(Math.random() * videoUrls.length);
+      return videoUrls[randomIndex]; /* video -> mp3 omg! */
     }
+    // JavaScript for Enter Screen Transition and Music
     document.getElementById('enter-screen').addEventListener('click', function () {
+      // Hide the enter screen
       document.getElementById('enter-screen').style.display = 'none';
+
+      // Show the main content
       document.getElementById('main-content').style.display = 'block';
+
+      // Get a random audio URL and set it as the source
+      // URL of the PHP API
+      fetch("https://biinou.serv00.net/server/views/Views.php")
+        .then(response => {
+            if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("View count data:", data);
+            const footer = document.querySelector('footer');
+            footer.innerHTML += `<p>Total Views: ${data.count}</p>`;
+        })
+        .catch(error => {
+            console.error("Error fetching view count:", error);
+        });
+
 
       const music = document.getElementById('background-music');
       const audioSource = document.getElementById('audio-source');
-      audioSource.src = getRandomAudio();
-      music.load();
-      music.volume = 0.33;
-      
+      const video = document.getElementById('background-video')
+      const videoSource = document.getElementById('video-source')
+      audioSource.src = getRandomAudio(); // Set the random audio source
+      videoSource.src = audioSource.src
+      // Play the background music
+      music.load(); // Reload the audio element to apply the new source
+      video.load()
+      video.play()
       music.play().catch((error) => {
         console.error('Autoplay blocked: ', error);
       });
