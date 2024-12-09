@@ -98,42 +98,32 @@ main {
     color: #bbb;
     line-height: 1.5;
 }
-
-
-
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1f1f38; /* Matches your reference */
+    background-color: #1f1f38; /* Dark background color */
     color: #fff; /* White text */
-    padding: 20px 50px; /* Add spacing around the footer */
-    font-size: 14px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.footer-left p {
-    margin: 0;
-    line-height: 1.5;
-}
-
-.footer-center {
+    padding: 20px;
     text-align: center;
+    font-size: 14px;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin: 5px 0;
 }
 
 .discord-btn {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: #fff;
+    color: #ffffff;
     background-color: #5865F2; /* Discord's brand color */
-    padding: 10px 15px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    font-size: 14px;
 }
 
 .discord-btn:hover {
@@ -144,29 +134,4 @@ footer {
     width: 20px;
     height: 20px;
     margin-right: 10px;
-}
-
-.footer-right a img {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
-    filter: brightness(0) invert(1); /* White icons */
-    transition: filter 0.3s ease;
-}
-
-.footer-right a img:hover {
-    filter: brightness(0.8) invert(1); /* Dim slightly on hover */
-}
-
-footer > div {
-    flex: 1; /* Ensure equal space for each section */
-    text-align: center;
-}
-
-.footer-left {
-    text-align: left;
-}
-
-.footer-right {
-    text-align: right;
 }
