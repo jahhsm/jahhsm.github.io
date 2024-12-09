@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Fncs Axe",
+        "tags": ["all", "pickaxe", "8.51"],
+        "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/FncsAxe.jpg",
+        "free": true,
+        "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_FncsAxe_P.zip",
+        "description": "Swaps Default Pickaxe"
+    },
+    {
+        "name": "Omega",
+        "tags": ["all", "skin", "8.51"],
+        "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Omega.jpg",
+        "free": true,
+        "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_Omega.zip",
+        "description": "Swaps Hybrid"
+    },
+    {
+        "name": "Skeleton Skin",
+        "tags": ["all", "premium", "skin", "8.51"],
+        "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
+        "free": false,
+        "purchase_url": "https://discord.gg/T23CVnphYu",
+        "description": "Boost the discord server to access this!"
+    }
+]
