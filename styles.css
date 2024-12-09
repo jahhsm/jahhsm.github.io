@@ -118,8 +118,8 @@ footer {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: #ffffff;
-    background-color: #5865F2; /* Discord's brand color */
+    color: #5865F2;
+    background-color: #ffffff; /* Discord's brand color */
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
@@ -127,11 +127,14 @@ footer {
 }
 
 .discord-btn:hover {
-    background-color: #4752c4;
+    background-color: #ffffff;
 }
 
 .discord-icon {
     width: 20px;
     height: 20px;
     margin-right: 10px;
+}
+.site-name {
+    color: #5865F2
 }
