@@ -1,7 +1,7 @@
 [
     {
         "name": "FNCS Pickaxe",
-        "tags": ["all", "pickaxe", "8.51"],
+        "tags": ["pickaxe", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/FncsAxe.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_FncsAxe_P.zip",
@@ -9,7 +9,7 @@
     },
     {
         "name": "Omega",
-        "tags": ["all", "skin", "8.51"],
+        "tags": ["skin", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Omega.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_Omega.zip",
@@ -17,7 +17,7 @@
     },
     {
         "name": "Recon Expert",
-        "tags": ["all", "skin", "8.51"],
+        "tags": ["skin", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Recon.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_ReconAgemt.zip",
@@ -25,7 +25,7 @@
     },
     {
         "name": "Skully Scepter",
-        "tags": ["all", "pickaxe", "8.51"],
+        "tags": ["pickaxe", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/Skully.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_Skully.zip",
@@ -33,15 +33,71 @@
     },
     {
         "name": "Arena",
-        "tags": ["all", "8.51"],
+        "tags": ["8.51"],
         "image": "https://biinou.serv00.net/server/Assets/Arena.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1vqNj_x-jpqcE19aZlEjKRn5iqj8qRMOr",
         "description": "Gives Arena UI, swaps?? Solos."
-    }, 
+    },  
+    {
+        "name": "Chaos Agent",
+        "tags": ["8.51", "skin"],
+        "image": "https://i.ibb.co/J2B3JdF/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1UO4oz611hY5977kTlTN3KBe_KEv3Ze67",
+        "description": "Swaps Hybrid"
+    },
+    {
+        "name": "Galaxy Star Wand",
+        "tags": ["8.51", "pickaxe"],
+        "image": "https://i.ibb.co/52SsjwP/GSW.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1TgmAzRyNhcMCa2U30hHBBbExIr39biou",
+        "description": "Swaps Default Pickaxe, also swaps EVA Pickaxe -> Guiding Glow"
+    },
+    {
+        "name": "Kor",
+        "tags": ["8.51", "skin"],
+        "image": "https://i.ibb.co/tCdkvc9/Kor-Arctic-Operative-Outfit-Fortnite.webp",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=12S-iYv6IxQSeUkltXao23DNXW05Wyo0c",
+        "description": "Swaps Blackheart"
+    },
+    {
+        "name": "Shadow Jules",
+        "tags": ["8.51", "skin"],
+        "image": "https://i.ibb.co/5jqzs5f/Jules-SHADOW-Featured-Outift-Fortnite.webp",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=13UFZGXOVoK_ITYsUULfPGzk94mM7p-UM",
+        "description": "Swaps Blackheart"
+    },
+    {
+        "name": "Star Wand",
+        "tags": ["8.51", "pickaxe"],
+        "image": "https://i.ibb.co/r3HgbbX/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=11mHjSNOZxBHaIbsuUBwhKf49KET183tk",
+        "description": "Swaps Default Pickaxe"
+    },
+    {
+        "name": "Studded Axe",
+        "tags": ["8.51", "pickaxe"],
+        "image": "https://i.ibb.co/HBHnDqF/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1dbBSx1ao9gjOJEYT52zxhYMxNxW7A1ux",
+        "description": "Swaps Instigator"
+    },
+    {
+        "name": "Harley Hitter",
+        "tags": ["8.51"],
+        "image": "https://i.ibb.co/WvX6VFn/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1GEDhGtqfnOFfRv1BEKTuUm0r10ZKkMF1",
+        "description": "Swaps MARSHY SMASHER"
+    },
     {
         "name": "Skeleton Skin",
-        "tags": ["all", "premium", "skin", "8.51"],
+        "tags": ["premium", "skin", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",
