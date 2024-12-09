@@ -147,7 +147,3 @@ footer {
     filter: brightness(0) invert(1); /* Make icons white */
     transition: filter 0.3s ease;
 }
-
-.social-icons a img:hover {
-    filter: brightness(0.8) invert(1); /* Dim the icon on hover */
-}
