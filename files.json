@@ -16,6 +16,22 @@
         "description": "Swaps Hybrid"
     },
     {
+        "name": "Recon Expert",
+        "tags": ["all", "skin", "8.51"],
+        "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Recon.jpg",
+        "free": true,
+        "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_ReconAgemt.zip",
+        "description": "Swaps Ramirez"
+    },
+    {
+        "name": "Skully Scepter",
+        "tags": ["all", "pickaxe", "8.51"],
+        "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/Skully.jpg",
+        "free": true,
+        "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_Skully.zip",
+        "description": "Swaps Default Pickaxe"
+    },
+    {
         "name": "Skeleton Skin",
         "tags": ["all", "premium", "skin", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
