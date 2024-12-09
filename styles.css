@@ -79,7 +79,7 @@ main {
 }
 #logo {
     width: 150px; /* Set the width of your logo */
-    height: auto; /* Keep the aspect ratio */
+    height: 200px; /* Keep the aspect ratio */
     display: block;
     margin: 0 auto; /* Center the logo horizontally */
 }
