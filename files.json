@@ -1,5 +1,13 @@
 [
     {
+        "name": "Bubble Builds",
+        "tags": ["8.51", "misc"],
+        "image": "https://i.ibb.co/Wyb9QG3/EfspKk5.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1e1QHLLI1ZbK_HVZOwTXlFBnp_3mTAVQJ",
+        "description": "This will change all of the building pieces to the well known 'Bubble Wrap Builds'!"
+    },
+    {
         "name": "FNCS Pickaxe",
         "tags": ["pickaxe", "8.51"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/FncsAxe.jpg",
@@ -33,7 +41,7 @@
     },
     {
         "name": "Arena",
-        "tags": ["8.51"],
+        "tags": ["8.51", "misc"],
         "image": "https://biinou.serv00.net/server/Assets/Arena.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1vqNj_x-jpqcE19aZlEjKRn5iqj8qRMOr",
@@ -70,6 +78,22 @@
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=13UFZGXOVoK_ITYsUULfPGzk94mM7p-UM",
         "description": "Swaps Blackheart"
+    },
+    {
+        "name": "Driver",
+        "tags": ["8.51", "pickaxe"],
+        "image": "https://i.ibb.co/fGjFqjy/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1xZQNredS1GFW4BcwNeQCPH7L_3dqoRPD",
+        "description": "Swaps Default Pickaxe"
+    },
+    {
+        "name": "Widow's Bite",
+        "tags": ["8.51", "pickaxe"],
+        "image": "https://i.ibb.co/2YhS0tS/whats-up-with-the-widows-bite-v0-pfm22vkpqm3c1.webp",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1OtUCnvgabeI6MjOkcc36tVvCRf22vCDq",
+        "description": "Swaps Default Pickaxe"
     },
     {
         "name": "Star Wand",
@@ -138,7 +162,7 @@
     {
         "name": "Catwoman Comic Book Outfit",
         "tags": ["8.51", "skin", "booster"],
-        "image": "https://media.discordapp.net/attachments/1316692024765845516/1316692026221137942/image.png?ex=675bf882&is=675aa702&hm=263b77a3a1e284edf9365410ec437e3b174064a27221afe9426e97d26d56d831&=&format=webp&quality=lossless&width=398&height=428",
+        "image": "https://i.ibb.co/1GsYxG6/bg.jpg",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",
         "description": "Boost the discord server to access this!"
