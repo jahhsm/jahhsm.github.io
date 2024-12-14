@@ -168,7 +168,7 @@
         "description": "Credits to: @bengio_10. Combat SMG for 12.41. only: model, stats, and icon. ID: WID_SMG_Recoil_Athena_UR"
     },
     {
-        "name": "Weird Minigun",
+        "name": "Banjo God Minigun",
         "tags": ["12.41", "id", "weapon"],
         "image": "https://i.ibb.co/yXCBfBt/rsz-675cc0e1f24a6.png",
         "free": true,
@@ -201,7 +201,7 @@
     },
     {
         "name": "Galaxy FNCS Pickaxe",
-        "tags": ["7.XX,", "8.51", "pickaxe", "swap"],
+        "tags": ["7.XX", "8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/TbfWxRL/rsz-675cc2b5435ba.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1nTk_1jKddD2J9VOLRt1gfQulE5MRT6J9",
@@ -281,7 +281,7 @@
     },
     {
         "name": "Crow's Menu (Skin & Backbling Changer) Ingame.",
-        "tags": ["9.10", "misc"],
+        "tags": ["9.10", "misc", "swap", "skin"],
         "image": "https://i.ibb.co/9YFhLQr/image.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1fBMt2_3_ZkUSYmKvEXYBdpFayXqBRt6P",
@@ -289,7 +289,7 @@
     },
     {
         "name": "Skeleton Skin",
-        "tags": ["booster", "skin", "8.51", "swap"],
+        "tags": ["booster", "skin", "8.51", "swap", "backbling"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",
