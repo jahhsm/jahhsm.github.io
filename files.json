@@ -1,11 +1,19 @@
 [
     {
         "name": "Large Pak Patch",
-        "tags": ["undefined version", "misc"],
+        "tags": ["undefined version", "misc", "file"],
         "image": "https://fakeimg.pl/500x500?text=Large+Pak+Patch&font=noto&font_size=30",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1_Z4jYtShVxjPLawNIFxhsU6hHGYsXyoS",
         "description": "If you're having issues with paks such as game crashing or 'Corrupted data was found' error then you must use the *.dll for your version. It's all in the README.txt"
+    },
+    {
+        "name": "Pak Bypass for Flux/Era",
+        "tags": ["misc", "file"],
+        "image": "https://fakeimg.pl/500x500?text=Pak+Bypass&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1Gp2QfdFKr0dfIDpWbXgrUJIYNuATGTah",
+        "description": "Tutorial: https://streamable.com/rarlqo"
     },
     {
         "name": "Bubble Builds",
