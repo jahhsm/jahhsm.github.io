@@ -99,8 +99,8 @@ main {
     line-height: 1.5;
 }
 footer {
-    background-color: #1f1f38; /* Dark background color */
-    color: #fff; /* White text */
+    background-color: #1f1f38;
+    color: #fff;
     padding: 20px;
     text-align: center;
     font-size: 14px;
@@ -119,7 +119,7 @@ footer {
     align-items: center;
     text-decoration: none;
     color: #5865F2;
-    background-color: #ffffff; /* Discord's brand color */
+    background-color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
