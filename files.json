@@ -1,7 +1,15 @@
 [
     {
+        "name": "Large Pak Patch",
+        "tags": ["undefined version", "misc"],
+        "image": "https://fakeimg.pl/500x500?text=Large+Pak+Patch&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1_Z4jYtShVxjPLawNIFxhsU6hHGYsXyoS",
+        "description": "If you're having issues with paks such as game crashing or 'Corrupted data was found' error then you must use the *.dll for your version. It's all in the README.txt"
+    },
+    {
         "name": "Bubble Builds",
-        "tags": ["8.51", "misc"],
+        "tags": ["8.51", "misc", "swap"],
         "image": "https://i.ibb.co/Wyb9QG3/EfspKk5.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1e1QHLLI1ZbK_HVZOwTXlFBnp_3mTAVQJ",
@@ -9,7 +17,7 @@
     },
     {
         "name": "FNCS Pickaxe",
-        "tags": ["pickaxe", "8.51"],
+        "tags": ["pickaxe", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/FncsAxe.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_FncsAxe_P.zip",
@@ -17,7 +25,7 @@
     },
     {
         "name": "Omega",
-        "tags": ["skin", "8.51"],
+        "tags": ["skin", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Omega.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_Omega.zip",
@@ -25,7 +33,7 @@
     },
     {
         "name": "Recon Expert",
-        "tags": ["skin", "8.51"],
+        "tags": ["skin", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Recon.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_ReconAgemt.zip",
@@ -33,7 +41,7 @@
     },
     {
         "name": "Skully Scepter",
-        "tags": ["pickaxe", "8.51"],
+        "tags": ["pickaxe", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Pickaxes/Skully.jpg",
         "free": true,
         "download_url": "https://biinou.serv00.net/server/Paks/8.51/z_Skully.zip",
@@ -41,7 +49,7 @@
     },
     {
         "name": "Arena",
-        "tags": ["8.51", "misc"],
+        "tags": ["8.51", "misc", "swap"],
         "image": "https://biinou.serv00.net/server/Assets/Arena.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1vqNj_x-jpqcE19aZlEjKRn5iqj8qRMOr",
@@ -49,7 +57,7 @@
     },  
     {
         "name": "Chaos Agent",
-        "tags": ["8.51", "skin"],
+        "tags": ["8.51", "skin", "swap"],
         "image": "https://i.ibb.co/J2B3JdF/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1UO4oz611hY5977kTlTN3KBe_KEv3Ze67",
@@ -57,7 +65,7 @@
     },
     {
         "name": "Galaxy Star Wand",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/52SsjwP/GSW.png",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1TgmAzRyNhcMCa2U30hHBBbExIr39biou",
@@ -65,7 +73,7 @@
     },
     {
         "name": "Kor",
-        "tags": ["8.51", "skin"],
+        "tags": ["8.51", "skin","swap"],
         "image": "https://i.ibb.co/tCdkvc9/Kor-Arctic-Operative-Outfit-Fortnite.webp",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=12S-iYv6IxQSeUkltXao23DNXW05Wyo0c",
@@ -73,7 +81,7 @@
     },
     {
         "name": "Shadow Jules",
-        "tags": ["8.51", "skin"],
+        "tags": ["8.51", "skin", "swap"],
         "image": "https://i.ibb.co/5jqzs5f/Jules-SHADOW-Featured-Outift-Fortnite.webp",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=13UFZGXOVoK_ITYsUULfPGzk94mM7p-UM",
@@ -81,7 +89,7 @@
     },
     {
         "name": "Driver",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/fGjFqjy/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1xZQNredS1GFW4BcwNeQCPH7L_3dqoRPD",
@@ -89,7 +97,7 @@
     },
     {
         "name": "Widow's Bite",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/2YhS0tS/whats-up-with-the-widows-bite-v0-pfm22vkpqm3c1.webp",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1OtUCnvgabeI6MjOkcc36tVvCRf22vCDq",
@@ -97,7 +105,7 @@
     },
     {
         "name": "Star Wand",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/r3HgbbX/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=11mHjSNOZxBHaIbsuUBwhKf49KET183tk",
@@ -105,7 +113,7 @@
     },
     {
         "name": "Studded Axe",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/HBHnDqF/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1dbBSx1ao9gjOJEYT52zxhYMxNxW7A1ux",
@@ -113,7 +121,7 @@
     },
     {
         "name": "Harley Hitter",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/WvX6VFn/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1GEDhGtqfnOFfRv1BEKTuUm0r10ZKkMF1",
@@ -121,7 +129,7 @@
     },
     {
         "name": "CJ",
-        "tags": ["8.51", "skin"],
+        "tags": ["8.51", "skin","swap"],
         "image": "https://i.ibb.co/9vSm93b/latest.webp",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1fSeF80OoKX_MlrktCO_zZxDt3GwAWWQF",
@@ -129,7 +137,7 @@
     },  
     {
         "name": "Bald Travis Scott",
-        "tags": ["8.51", "skin"],
+        "tags": ["8.51", "skin", "swap"],
         "image": "https://fakeimg.pl/500x500?text=nothing+here&font=noto&font_size=30",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1XLsa-BgeG9AQyfNNUWdbdAf6em8sWsSy",
@@ -137,7 +145,7 @@
     },
     {
         "name": "Echo",
-        "tags": ["8.51", "skin"],
+        "tags": ["8.51", "skin", "swap"],
         "image": "https://i.ibb.co/BZZ9chs/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1id_ZIluGeQTQPXN6BAKIcozXEIVdEdG6",
@@ -145,15 +153,143 @@
     },
     {
         "name": "Raider's Revenge",
-        "tags": ["8.51", "pickaxe"],
+        "tags": ["8.51", "pickaxe", "swap"],
         "image": "https://i.ibb.co/f1RJZRr/bg.jpg",
         "free": true,
         "download_url": "https://drive.google.com/uc?export=download&id=1id_ZIluGeQTQPXN6BAKIcozXEIVdEdG6",
         "description": "Swaps Default Pickaxe"
     },
     {
+        "name": "Combat SMG",
+        "tags": ["12.41", "id", "weapon"],
+        "image": "https://i.ibb.co/j46mjNT/just-some-weapons-that-would-go-crazy-with-attachment-mods-v0-fxntfeedjpec1.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1vdQXMmtR587XlQ_sKVFacPL_VLu9o_-n",
+        "description": "Credits to: @bengio_10. Combat SMG for 12.41. only: model, stats, and icon. ID: WID_SMG_Recoil_Athena_UR"
+    },
+    {
+        "name": "Weird Minigun",
+        "tags": ["12.41", "id", "weapon"],
+        "image": "https://i.ibb.co/yXCBfBt/rsz-675cc0e1f24a6.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1Ugvk_NKJqdU-A4w0P_dM0kO9xg6-bTOY",
+        "description": "Credits to: @bengio_10. Doesn't 100% work has the rap god + banjo kazooie theme. ID: WID_Banjo_Clyde"
+    },
+    {
+        "name": "Pink Ghoul Trooper",
+        "tags": ["undefined version", "swap", "skin"],
+        "image": "https://i.ibb.co/1GTc5j1/background.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1hntvnqiigBzn7e4U3odnRPJBP9cVrI5Y",
+        "description": "Swaps with Default Skin (probably Ramirez cba)"
+    },
+    {
+        "name": "Gwen",
+        "tags": ["8.51", "skin", "swap"],
+        "image": "https://i.ibb.co/94nDWcY/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1QsgRGCmqk8GHJ3NWWTSnGyBfwX94K3oa",
+        "description": "Swaps Bunnymoon, credits to @blurrfx"
+    },
+    {
+        "name": "Ice Spice",
+        "tags": ["8.51", "9.XX", "id"],
+        "image": "https://i.ibb.co/1Kypgyf/Rap-Princess-Ice-Spice-Outfit-Fortnite.webp",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=14A8A44C6y7Lr6LW5esd_c8MrnmzGhH_w",
+        "description": "Ice Spice for 8.51 and 9:XX (made by @pashanox5534) ID: Character_BerryTartBrunt "
+    },
+    {
+        "name": "Galaxy FNCS Pickaxe",
+        "tags": ["7.XX,", "8.51", "pickaxe", "swap"],
+        "image": "https://i.ibb.co/TbfWxRL/rsz-675cc2b5435ba.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1nTk_1jKddD2J9VOLRt1gfQulE5MRT6J9",
+        "description": "Swaps Stellar Axe, credits to ???"
+    },
+    {
+        "name": "Boy's a Liar",
+        "tags": ["7.XX", "emote", "id"],
+        "image": "https://i.ibb.co/LJwykj0/bg.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1TiU2RfvwIiLFW3atjuR_UzSR9kfzZjQZ",
+        "description": "Boy's a Liar emote, works on 7.XX uses EID_Deceiver. (backported with JsonAsAsset) made by @boredcrow24"
+    },
+    {
+        "name": "Infinite Grappler Ammo",
+        "tags": ["6.21", "misc"],
+        "image": "https://i.ibb.co/0XXS27Y/images.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1Q3D7PI6bCAhBzKhb31hzZpvFu3diZF-b",
+        "description": "Gives infinite grappler ammo."
+    },
+    {
+        "name": "Sprint by Default",
+        "tags": ["4.XX", "misc"],
+        "image": "https://fakeimg.pl/500x500?text=Sprint+by+Default&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1ra-RvxY2sXQvj3dFgCusDT-J0foUwEBw",
+        "description": "Gives you Sprint by Default, nothing else to be said."
+    },
+    {
+        "name": "Login Fix",
+        "tags": ["4.XX", "misc"],
+        "image": "https://i.ibb.co/K07RnRV/rsz-675cc5685738f.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1SsHoTHa6PD4b33--MtENSJ87oa1qhfBl",
+        "description": "Fixes login..."
+    },
+    {
+        "name": "Epic Hosting Paks",
+        "tags": ["4.XX", "misc"],
+        "image": "https://fakeimg.pl/500x500?text=Epic+Hosting+Paks&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1eOUyG14xVfjtJJvgDqjRXy3_OKm80pXa",
+        "description": "Epic Hosting Paks, full credits to 573225815936991246/@ahc8"
+    },
+    {
+        "name": "Black Wick",
+        "tags": ["4.XX", "skin", "swap"],
+        "image": "https://i.ibb.co/zGnwF0D/rsz-675cc64a1fd12.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1b0zjpSA-wSVa95wckTwLDcfNsQVos0X_",
+        "description": "Swaps Reaper??? Name: The Black Plauge, Credits to: 573225815936991246/@ahc8"
+    },
+    {
+        "name": "Bots",
+        "tags": ["5.41", "8.51", "misc", "rift"],
+        "image": "https://fakeimg.pl/500x500?text=Spawn+Bots&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1-EgB6zhBRg-AEPqp0qCpikJ2rMSZL720",
+        "description": "Read the 'README.txt' in the folder for instructions."
+    },
+    {
+        "name": "Dub Shotgun",
+        "tags": ["9.XX", "weapon"],
+        "image": "https://i.ibb.co/QrFZhCf/dub-shotgun-drawing-v0-5wcrqb9x3sw91.webp",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1EPn7Aq5ELF4TIbRBegh-Lx_HJyaYSTGF",
+        "description": "Adds Dub Exotic for S8-S9, no other information..."
+    },
+    {
+        "name": "Giant WiiMote",
+        "tags": ["9.XX", "weapon", "swap"],
+        "image": "https://i.ibb.co/QCxsR72/s-l1200.jpg",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1LRVyVZYDLCDKRHm6dceips0fk-K_9j6N",
+        "description": "Swap the Green and Blue Pump Shotgun for a huge wii remote"
+    },
+    {
+        "name": "Crow's Menu (Skin & Backbling Changer) Ingame.",
+        "tags": ["9.10", "misc"],
+        "image": "https://i.ibb.co/9YFhLQr/image.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1fBMt2_3_ZkUSYmKvEXYBdpFayXqBRt6P",
+        "description": "This pak adds an Skin & Backbling Changer whilst ingame. If your game crashes, try using the LARGEPAKPATCH. (to apply a skin or backbling you have to doubleclick in the skin/backbling you want.) credits to @boredcrow24"
+    },
+    {
         "name": "Skeleton Skin",
-        "tags": ["booster", "skin", "8.51"],
+        "tags": ["booster", "skin", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",
@@ -161,7 +297,7 @@
     },
     {
         "name": "Catwoman Comic Book Outfit",
-        "tags": ["8.51", "skin", "booster"],
+        "tags": ["8.51", "skin", "booster", "swap"],
         "image": "https://i.ibb.co/1GsYxG6/bg.jpg",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",
