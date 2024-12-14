@@ -54,15 +54,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     description.textContent = file.description || "No description available.";
 
                     const link = document.createElement("a");
+
                     link.textContent = file.free ? "Download" : "Purchase";
                     link.href = file.free ? file.download_url : file.purchase_url;
                     link.className = file.free ? "free" : "paid";
+
+                    const discord_link = document.createElement("a");
+                    
+                    link.textContent = file.discord_serverName || undefined;
+                    link.href = file.discord_server || undefined;
+                    link.className = "DiscordServer";
 
                     card.appendChild(img);
                     card.appendChild(title);
                     card.appendChild(tagsDiv);
                     card.appendChild(description);
                     card.appendChild(link);
+
+                    card.appendChild(discord_server);
+                    
                     fileContainer.appendChild(card);
                 });
             }
