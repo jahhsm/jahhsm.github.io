@@ -59,6 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     link.href = file.free ? file.download_url : file.purchase_url;
                     link.className = file.free ? "free" : "paid";
 
+                    card.appendChild(img);
+                    card.appendChild(title);
+                    card.appendChild(tagsDiv);
+                    card.appendChild(description);
+                    card.appendChild(link);
                     if (file.discord_url) {
                         const discordButton = document.createElement("a");
                         discordButton.textContent = "Join Their Discord";
@@ -67,13 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         discordButton.target = "_blank"; // Open in a new tab
                         card.appendChild(discordButton);
                     }
-
-                    card.appendChild(img);
-                    card.appendChild(title);
-                    card.appendChild(tagsDiv);
-                    card.appendChild(description);
-                    card.appendChild(link);
-
                     fileContainer.appendChild(card);
                 });
             }
