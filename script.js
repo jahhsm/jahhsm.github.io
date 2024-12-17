@@ -48,17 +48,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         tagSpan.textContent = tag;
                         tagsDiv.appendChild(tagSpan);
                     });
-
                     const description = document.createElement("p");
                     description.className = "description";
                     description.textContent = file.description || "No description available.";
-
                     const link = document.createElement("a");
-
                     link.textContent = file.free ? "Download" : "Purchase";
                     link.href = file.free ? file.download_url : file.purchase_url;
                     link.className = file.free ? "free" : "paid";
-
                     card.appendChild(img);
                     card.appendChild(title);
                     if (file.discord_url) {
@@ -66,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         discordButton.textContent = "Join their discord!";
                         discordButton.href = file.discord_url;
                         discordButton.className = "discord-button";
-                        discordButton.target = "_blank"; // Open in a new tab
-                        card.appendChild(discordButton);
+                        discordButton.target = "_blank";
+                        card.appendChild(discordButton); // blah blah blah idgaf stomp
                     }
                     card.appendChild(tagsDiv);
                     card.appendChild(description);

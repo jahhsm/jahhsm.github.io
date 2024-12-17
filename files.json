@@ -1,5 +1,13 @@
 [
     {
+        "name": "Bubble and Mobile Builds",
+        "tags": ["undefined version", "misc", "swap"],
+        "image": "https://i.ibb.co/PZ3NkTD/image.png",
+        "free": true,
+        "download_url": "https://drive.google.com/uc?export=download&id=1FsAEu1mKkV1al5W1EDy8cVXsJi6dSZaU",
+        "description": "Bubble and Mobile Builds for Retrac/FortMP/Beyond (CANNOT USE AT THE SAME TIME!)"
+    },
+    {
         "name": "Large Pak Patch",
         "tags": ["undefined version", "misc", "file"],
         "image": "https://fakeimg.pl/500x500?text=Large+Pak+Patch&font=noto&font_size=30",
