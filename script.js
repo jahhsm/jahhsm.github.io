@@ -48,15 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
                         tagSpan.textContent = tag;
                         tagsDiv.appendChild(tagSpan);
                     });
+
                     const description = document.createElement("p");
                     description.className = "description";
                     description.textContent = file.description || "No description available.";
+
                     const link = document.createElement("a");
                     link.textContent = file.free ? "Download" : "Purchase";
                     link.href = file.free ? file.download_url : file.purchase_url;
                     link.className = file.free ? "free" : "paid";
+                    
+
+
                     card.appendChild(img);
                     card.appendChild(title);
+
                     if (file.discord_url) {
                         const discordButton = document.createElement("a");
                         discordButton.textContent = "Join their discord!";
@@ -66,6 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         card.appendChild(discordButton); // blah blah blah idgaf stomp
                     }
                     card.appendChild(tagsDiv);
+                    if (file.author) {
+                        const author= document.createElement("small");
+                        author.textContent = "Made by" . file.author;
+                        card.append(author);
+                    }
                     card.appendChild(description);
                     card.appendChild(link);
                     fileContainer.appendChild(card);
