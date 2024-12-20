@@ -12,7 +12,7 @@
             const responseType = 'code';  // You will receive an authorization code
             const state = 'some_random_string';  // Optional: Add security (check it on redirect)
 
-            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}&state=${state}`;
+            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_url=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}&state=${state}`;
 
             // Redirect to Discord's authorization page
             window.location.href = authUrl;
