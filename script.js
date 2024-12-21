@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.appendChild(img);
                     card.appendChild(title);
                     if (file.author) {
-                        const author = document.createElement("h1");
-                        author.textContent = file.author;
+                        const author = document.createElement("small");
+                        author.textContent = "made by:"+file.author;
                         card.appendChild(author);
                     }
                     if (file.discord_url) {
