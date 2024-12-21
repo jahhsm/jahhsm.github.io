@@ -104,7 +104,7 @@
         name: document.getElementById('scriptName').value,
         tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
         image: document.getElementById('imageURL').value,
-        free: document.getElementById('scriptType').value === 'free',
+        free: true,
         download_url: document.getElementById('purchaseURL').value,
         description: document.getElementById('description').value,
         author: document.getElementById('author').value
