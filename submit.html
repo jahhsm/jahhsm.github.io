@@ -71,12 +71,12 @@
 
             <div class="form-group">
                 <label for="imageURL">Image URL:</label>
-                <input type="url" id="imageURL" />
+                <input type="url" id="imageURL" required/>
             </div>
 
             <div class="form-group">
                 <label for="tags">Tags:</label>
-                <input type="text" id="tags" placeholder="Separate with commas" />
+                <input type="text" id="tags" placeholder="version, [pickaxe, skin, backbling or etc.], id or swap" required/>
             </div>
 
             <div class="form-group">
@@ -86,9 +86,12 @@
 
             <div class="form-group">
                 <label for="purchaseURL">Direct Download URL:</label>
-                <input type="url" id="purchaseURL" />
+                <input type="url" id="purchaseURL" required />
             </div>
-
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author"/>
+            </div>
             <div class="form-group">
                 <button type="button" onclick="submitForm()">Upload</button>
             </div>
@@ -104,7 +107,7 @@
         free: document.getElementById('scriptType').value === 'free',
         download_url: document.getElementById('purchaseURL').value,
         description: document.getElementById('description').value,
-        author: document.getElementById('')
+        author: document.getElementById('author')
     };
 
     console.log('Data to send:', data); // Debugging log
