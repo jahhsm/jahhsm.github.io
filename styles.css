@@ -129,7 +129,9 @@ footer {
 .discord-btn:hover {
     background-color: #ffffff;
 }
-
+.author {
+    opacity: 0.3
+}
 .discord-icon {
     width: 20px;
     height: 20px;

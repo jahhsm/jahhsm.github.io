@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (file.author) {
                         const author = document.createElement("small");
                         author.textContent = `made by: ${file.author}`;
+                        author.className = "author";
                         card.appendChild(author);
                     }
                     if (file.discord_url) {
