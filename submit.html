@@ -63,6 +63,8 @@
 <body>
     <div class="form-container">
         <h1>Upload Pak</h1>
+        <h1>Login with Discord</h1>
+    <button onclick="loginWithDiscord()">Login with Discord</button>
         <form id="uploadForm">
             <div class="form-group">
                 <label for="scriptName">Name:</label>
@@ -99,7 +101,16 @@
     </div>
 
     <script>
+    function loginWithDiscord() {
+        const clientId = '1315558713972756522';
+        const redirectUri = 'https://jahhsm.online/testingg';
+        const scope = 'identify';
+        const responseType = 'code';
+        const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_url=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
+        window.location.href = authUrl;
+    }
     async function submitForm() {
+        
     const data = {
         name: document.getElementById('scriptName').value,
         tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
@@ -107,8 +118,15 @@
         free: true,
         download_url: document.getElementById('purchaseURL').value,
         description: document.getElementById('description').value,
-        author: document.getElementById('author').value
+        author: document.getElementById('author').value,
+        auth_code: authCode
     };
+    const urlParams = new URLSearchParams(window.location.search);
+    const authCode = urlParams.get('code');
+    if (!authCode) {
+        alert('Authorization code is missing in the URL.');
+        return;
+    }
 
     console.log('Data to send:', data);
 

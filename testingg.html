@@ -6,15 +6,11 @@
     <title>discord oauth</title>
     <script>
         function loginWithDiscord() {
-            const clientId = '1315558713972756522';  // Your Discord client ID
-            const redirectUri = 'https://jahhsm.online/testingg';  // Your redirect URI
-            const scope = 'identify';  // Scopes to request
-            const responseType = 'code';  // You will receive an authorization code
-            const state = 'some_random_string';  // Optional: Add security (check it on redirect)
-
-            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_url=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}&state=${state}`;
-
-            // Redirect to Discord's authorization page
+            const clientId = '1315558713972756522';
+            const redirectUri = 'https://jahhsm.online/testingg';
+            const scope = 'identify';
+            const responseType = 'code';
+            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_url=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
             window.location.href = authUrl;
         }
 
