@@ -3,97 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>upload your own paks</title>
+    <title>Upload Your Own Paks</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #1a1a2e;
-            color: white;
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .form-container {
-            background: #162447;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             width: 400px;
         }
 
         .form-container h1 {
             text-align: center;
-            margin-bottom: 20px;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Trebuchet MS';
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
         }
 
         .form-group label {
             display: block;
+            font-size: 0.9rem;
+            color: #555;
             margin-bottom: 5px;
         }
 
         .form-group input,
         .form-group textarea,
-        .form-group select,
         .form-group button {
             width: 100%;
             padding: 10px;
-            border: none;
-            border-radius: 5px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-group textarea {
+            resize: none;
         }
 
         .form-group button {
-            background-color: #e43f5a;
+            background-color: #4caf50;
             color: white;
+            font-weight: bold;
+            border: none;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
         .form-group button:hover {
-            background-color: #d63447;
+            background-color: #45a049;
+        }
+
+        .discord-login {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .discord-login button {
+            background-color: #5865f2;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .discord-login button:hover {
+            background-color: #4752c4;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
-        <h1>Upload Pak</h1>
-        <h1>Login with Discord</h1>
-    <button onclick="loginWithDiscord()">Login with Discord</button>
+        <div class="pak">
+            <h1>Upload your paks</h1>
+        </div>
+        <div class="discord-login">
+            <button onclick="loginWithDiscord()">Login with Discord</button>
+        </div>
         <form id="uploadForm">
             <div class="form-group">
                 <label for="scriptName">Name:</label>
-                <input type="text" id="scriptName" required />
+                <input type="text" id="scriptName" placeholder="Enter the script name" required />
             </div>
 
             <div class="form-group">
                 <label for="imageURL">Image URL:</label>
-                <input type="url" id="imageURL" required/>
+                <input type="url" id="imageURL" placeholder="Enter the image URL" required />
             </div>
 
             <div class="form-group">
                 <label for="tags">Tags:</label>
-                <input type="text" id="tags" placeholder="version, [pickaxe, skin, backbling or etc.], id or swap" required/>
+                <input type="text" id="tags" placeholder="version, pickaxe, skin, backbling, etc." required />
             </div>
 
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" rows="3" required></textarea>
+                <textarea id="description" rows="3" placeholder="Provide a description" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="purchaseURL">Direct Download URL:</label>
-                <input type="url" id="purchaseURL" required />
+                <input type="url" id="purchaseURL" placeholder="Enter the download URL" required />
             </div>
-            <div class="form-group">
-                <label for="author">Author:</label>
-                <input type="text" id="author"/>
-            </div>
+
             <div class="form-group">
                 <button type="button" onclick="submitForm()">Upload</button>
             </div>
@@ -101,65 +133,65 @@
     </div>
 
     <script>
-    function loginWithDiscord() {
-        const clientId = '1315558713972756522';
-        const redirectUri = 'https://jahhsm.online/submit';
-        const scope = 'identify';
-        const responseType = 'code';
-        const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_url=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
-        window.location.href = authUrl;
-    }
-    function getQueryParameter(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
-    }
-    async function submitForm() {
-    const authCode = getQueryParameter('code');
-    if (authCode) {
-        console.log('Authorization code:', authCode)
-    }
-    if (!authCode) {
-        alert('Authorization code is missing in the URL.');
-        return;
-    }
-
-    const data = {
-        name: document.getElementById('scriptName').value,
-        tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
-        image: document.getElementById('imageURL').value,
-        free: true,
-        download_url: document.getElementById('purchaseURL').value,
-        description: document.getElementById('description').value,
-        author: document.getElementById('author').value,
-        auth_code: authCode
-    };
-
-    console.log('Data to send:', data);
-
-    try {
-        const response = await fetch('https://biinou.serv00.net/server/Uploap/upload.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            const result = await response.json();
-            console.log('Server Response:', result);
-            alert('Script uploaded successfully!');
-        } else {
-            const error = await response.json();
-            console.error('Server Error:', error);
-            alert('Failed to upload script. (Try again in 5 minutes)');
+        if (true) {
+            const discordlogin = document.querySelector('.discord-login');
+            const discordLoginButton = document.querySelector('.discord-login button');
+            console.log(discordLoginButton.textContent);
+            //discordlogin.style.display = 'none';
         }
-    } catch (error) {
-        console.error('Fetch Error:', error);
-        alert('An error occurred: ' + error.message);
-    }
-}
+        function loginWithDiscord() {
+            const clientId = '1315558713972756522';
+            const redirectUri = 'https://jahhsm.online/submit';
+            const scope = 'identify';
+            const responseType = 'code';
+            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
+            window.location.href = authUrl;
+        }
 
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        const authCode = getQueryParameter('code');
+            if (authCode) {
+                const discordlogin = document.querySelector('.discord-login');
+                discordlogin.style.display = 'none';
+            }
+        async function submitForm() {
+            if (!authCode) {
+                alert('Authorization code is missing. Please log in with Discord.');
+                return;
+            }
+            const data = {
+                name: document.getElementById('scriptName').value,
+                tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
+                image: document.getElementById('imageURL').value,
+                free: true,
+                download_url: document.getElementById('purchaseURL').value,
+                description: document.getElementById('description').value,
+                auth_code: authCode
+            };
+
+            try {
+                const response = await fetch('https://biinou.serv00.net/server/Uploap/upload.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert('Script uploaded successfully.');
+                } else {
+                    const error = await response.json();
+                    alert(`Failed to upload script: ${error.message}`);
+                }
+            } catch (error) {
+                alert(`An error occurred: ${error.message}`);
+            }
+        }
     </script>
 </body>
 </html>
