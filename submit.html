@@ -116,7 +116,7 @@
     async function submitForm() {
     const authCode = getQueryParameter('code');
     if (authCode) {
-        console.log('Authorization code:', code)
+        console.log('Authorization code:', authCode)
     }
     if (!authCode) {
         alert('Authorization code is missing in the URL.');
