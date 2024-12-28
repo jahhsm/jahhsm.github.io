@@ -110,7 +110,12 @@
         window.location.href = authUrl;
     }
     async function submitForm() {
-        
+    const urlParams = new URLSearchParams(window.location.search);
+    const authCode = urlParams.get('code');
+    if (!authCode) {
+        alert('Authorization code is missing in the URL.');
+        return;
+    }
     const data = {
         name: document.getElementById('scriptName').value,
         tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
@@ -121,12 +126,6 @@
         author: document.getElementById('author').value,
         auth_code: authCode
     };
-    const urlParams = new URLSearchParams(window.location.search);
-    const authCode = urlParams.get('code');
-    if (!authCode) {
-        alert('Authorization code is missing in the URL.');
-        return;
-    }
 
     console.log('Data to send:', data);
 
