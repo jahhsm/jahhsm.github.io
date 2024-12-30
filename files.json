@@ -307,7 +307,7 @@
     },
     {
         "name": "Skeleton Skin",
-        "tags": ["booster", "skin", "8.51", "swap", "backbling"],
+        "tags": ["booster", "skin", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",
@@ -315,7 +315,7 @@
     },
     {
         "name": "Catwoman Comic Book Outfit",
-        "tags": ["8.51", "skin", "booster", "swap"],
+        "tags": ["booster","8.51", "skin", "swap"],
         "image": "https://i.ibb.co/1GsYxG6/bg.jpg",
         "free": false,
         "purchase_url": "https://discord.gg/T23CVnphYu",

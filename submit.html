@@ -44,6 +44,7 @@
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea,
         .form-group button {
             width: 100%;
@@ -112,8 +113,37 @@
             </div>
 
             <div class="form-group">
-                <label for="tags">Tags:</label>
-                <input type="text" id="tags" placeholder="version, pickaxe, skin, backbling, etc." required />
+                <label for="version">Version:</label>
+                <select id="version" required>
+                    <option value="4.XX">4.XX</option>
+                    <option value="5.41">5.41</option>
+                    <option value="6.21">6.21</option>
+                    <option value="7.XX">7.XX</option>
+                    <option value="7.40">7.40</option>
+                    <option value="8.51">8.51</option>
+                    <option value="9.XX">9.XX</option>
+                    <option value="9.10">9.10</option>
+                    <option value="12.41">12.41</option>
+                    <option value="14.30">14.30</option>
+                    <option value="14.40">14.40</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cosmetic">Cosmetic Type:</label>
+                <select id="cosmetic" required>
+                    <option value="skin">Skin</option>
+                    <option value="pickaxe">Pickaxe</option>
+                    <option value="backbling">Backbling</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="actionType">Action:</label>
+                <select id="actionType" required>
+                    <option value="id">ID</option>
+                    <option value="swap">Swap</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -139,12 +169,13 @@
             console.log(discordLoginButton.textContent);
             //discordlogin.style.display = 'none';
         }
+
         function loginWithDiscord() {
             const clientId = '1315558713972756522';
             const redirectUri = 'https://jahhsm.online/submit';
             const scope = 'identify';
             const responseType = 'code';
-            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
+            const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_url=${encodeURIComponent(redirectUri)}&response_type=${responseType}&scope=${encodeURIComponent(scope)}`;
             window.location.href = authUrl;
         }
 
@@ -153,25 +184,34 @@
             return urlParams.get(name);
         }
         const authCode = getQueryParameter('code');
-            if (authCode) {
-                const discordlogin = document.querySelector('.discord-login');
-                discordlogin.style.display = 'none';
-            }
+        if (authCode) {
+            const discordlogin = document.querySelector('.discord-login');
+            discordlogin.style.display = 'none';
+        }
+
         async function submitForm() {
             if (!authCode) {
                 alert('Authorization code is missing. Please log in with Discord.');
                 return;
             }
+
+            // Combine version, cosmetic, and actionType into tags array
+            const tags = [
+                document.getElementById('version').value,
+                document.getElementById('cosmetic').value,
+                document.getElementById('actionType').value
+            ];
+
             const data = {
                 name: document.getElementById('scriptName').value,
-                tags: document.getElementById('tags').value.split(',').map(tag => tag.trim()),
+                tags: tags,  // Array of version, cosmetic, and actionType
                 image: document.getElementById('imageURL').value,
                 free: true,
                 download_url: document.getElementById('purchaseURL').value,
                 description: document.getElementById('description').value,
                 auth_code: authCode
             };
-
+            console.log('data sending:', data)
             try {
                 const response = await fetch('https://biinou.serv00.net/server/Uploap/upload.php', {
                     method: 'POST',
@@ -183,12 +223,15 @@
 
                 if (response.ok) {
                     const result = await response.json();
+                    console.log('Server response:', result);
                     alert('Script uploaded successfully.');
                 } else {
                     const error = await response.json();
+                    console.error('Server error:', error);
                     alert(`Failed to upload script: ${error.message}`);
                 }
             } catch (error) {
+                console.error("errorr:", error);
                 alert(`An error occurred: ${error.message}`);
             }
         }
