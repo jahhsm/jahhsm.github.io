@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Your Own Paks</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Icon.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta property="og:title" content="OGFN PakUploader" />
+    <meta property="og:description" content="OG Fortnite PakUploader, upload only for provided versions, DM me: jahslime777 to add new versions" />
+    <meta property="og:image" content="https://biinou.serv00.net/server/Assets/ayoss.png" />
+    <meta property="og:url" content="https://jahhsm.online/submit"/>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload Your own paks</title>
     <style>
         body {
             font-family: 'Inter', Arial, sans-serif;
@@ -130,11 +138,12 @@
             </div>
 
             <div class="form-group">
-                <label for="cosmetic">Cosmetic Type:</label>
+                <label for="cosmetic">Item type:</label>
                 <select id="cosmetic" required>
                     <option value="skin">Skin</option>
                     <option value="pickaxe">Pickaxe</option>
                     <option value="backbling">Backbling</option>
+                    <option value="weapon">Weapon</option>
                 </select>
             </div>
 
@@ -148,7 +157,7 @@
 
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea id="description" rows="3" placeholder="Provide a description" required></textarea>
+                <textarea id="description" rows="3" placeholder="Provide a description e.g: Swaps (item). e.g 2: Adds the (id)" required></textarea>
             </div>
 
             <div class="form-group">
@@ -195,7 +204,7 @@
                 return;
             }
 
-            // Combine version, cosmetic, and actionType into tags array
+            // kms stoopp!
             const tags = [
                 document.getElementById('version').value,
                 document.getElementById('cosmetic').value,
@@ -204,7 +213,7 @@
 
             const data = {
                 name: document.getElementById('scriptName').value,
-                tags: tags,  // Array of version, cosmetic, and actionType
+                tags: tags,  // kms
                 image: document.getElementById('imageURL').value,
                 free: true,
                 download_url: document.getElementById('purchaseURL').value,
