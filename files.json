@@ -306,6 +306,159 @@
         "description": "This pak adds an Skin & Backbling Changer whilst ingame. If your game crashes, try using the LARGEPAKPATCH. (to apply a skin or backbling you have to doubleclick in the skin/backbling you want.) credits to @boredcrow24"
     },
     {
+        "name": "Black Shield",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Black+Shield&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/s8q7is.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Cliffhanger",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Cliffhanger&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/64pbk3.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Cyndaquil",
+        "tags": ["mass uploaded", "8.51"],
+        "image": "https://fakeimg.pl/500x500?text=Cyndaquil+8.51&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/s3k4f1.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap"
+    },
+    {
+        "name": "Candy Axe",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Candy+Axe&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/3qp3rn.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Disco Pickaxe",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Disco+Pickaxe&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/uz6bj9.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "EVA Pickaxe",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=EVA&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/37sqif.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Festive Music",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Festive+Music&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/4mvjzq.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap"
+    },
+    {
+        "name": "Flames Contrail",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Flames+Contrail&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/bh001b.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Flamingo",
+        "tags": ["mass uploaded", "swap"],
+        "image": "https://fakeimg.pl/500x500?text=Flamingo&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/h6hb38.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "AllyWeapons",
+        "tags": ["mass uploaded", "3.5", "weapon"],
+        "image": "https://fakeimg.pl/500x500?text=3.5+Ally+Weapons&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/tltup4.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap",
+        "author": "AllyPak"
+    },
+    {
+        "name": "Red Hot Revenge",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Red+Hot+Revenge&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/i1a8y1.zip ",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap"
+    },
+    {
+        "name": "Default To CustomSkin",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Custom+Skin&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/gveu8c.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap (NO IDEA WHAT SKIN IT IS)"
+    },
+    {
+        "name": "Makima",
+        "tags": ["mass uploaded", "7.40"],
+        "image": "https://ibb.co/n88bqgF",
+        "free": true,
+        "download_url": "https://files.catbox.moe/nwgd04.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Makima",
+        "tags": ["mass uploaded", "9.10"],
+        "image": "https://ibb.co/n88bqgF",
+        "free": true,
+        "download_url": "https://files.catbox.moe/bl7fpj.zip ",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Chun Li",
+        "tags": ["mass uploaded"],
+        "image": "https://ibb.co/KmXQ23B",
+        "free": true,
+        "download_url": "https://files.catbox.moe/ulhvgh.zip ",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Custom Ghoul",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Custom+Ghoul+Trooper&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/oxzrov.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Griddy",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Griddy&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/e4d0oi.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "Adidas Skin",
+        "tags": ["mass uploaded"],
+        "image": "https://fakeimg.pl/500x500?text=Adidas+Skin&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://files.catbox.moe/t7n677.zip",
+        "description": "No version given, no item type given (Name usually will have info), most likely is a swap of default"
+    },
+    {
+        "name": "All Mass Uploaded Paks",
+        "tags": ["mass uploaded", "undefined version", "file"],
+        "image": "https://fakeimg.pl/500x500?text=Mass+Uploaded+Paks&font=noto&font_size=30",
+        "free": true,
+        "download_url": "https://cdn.discordapp.com/attachments/1311512882579509334/1323678373385470054/Uploaded-files.txt?ex=6775630c&is=6774118c&hm=dafe21a47f6e514e31820e9e84b8aea01ceb49e251f1f0ce6e4758f6150a40fd&",
+        "description": "All mass uploaded paks, feel free to use any."
+    },
+    {
         "name": "Skeleton Skin",
         "tags": ["booster", "skin", "8.51", "swap"],
         "image": "https://raw.githubusercontent.com/Aaronin21/Files/refs/heads/main/Images/Skins/Skeleton.png",
