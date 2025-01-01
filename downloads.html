@@ -20,6 +20,7 @@
         <input type="text" id="search" placeholder="Search files...">
         <div id="tags"></div>
     </header>
+    <div id="ad-container"></div>
     <main id="file-container">
     </main>
     <script src="script.js"></script>
@@ -32,6 +33,17 @@
                 Join our Discord
             </a>
         </div>
-    </footer>    
+    </footer>
+    <script>
+        function insertAd() {
+            const adContainer = document.getElementById('ad-container');
+            const adElement = document.createElement('div');
+            adElement.classList.add('ad-placeholder');
+            adElement.innerHTML = 'Ad Placeholder (300x250)';
+            adContainer.appendChild(adElement);
+        }
+
+        window.onload = insertAd;
+    </script>    
 </body>
 </html>
