@@ -1,0 +1,45 @@
+{
+    "categories": [
+      {
+        "name": "INFO",
+        "files": [
+          { "name": "rules", "url": "rules.html" },
+          { "name": "anc", "url": "anc.html" },
+          { "name": "roles", "url": "roles.html" },
+          { "name": "boost", "url": "boost.html" }
+        ]
+      },
+      {
+        "name": "che",
+        "files": [
+          { "name": "news", "url": "news.html" }
+        ]
+      },
+      {
+        "name": "community",
+        "files": [
+          { "name": "general", "url": "general.html" },
+          { "name": "bots", "url": "bots.html" },
+          { "name": "media", "url": "media.html" }
+        ]
+      },
+      {
+        "name": "snippets",
+        "files": [
+          { "name": "2023", "url": "2023.html" },
+          { "name": "2024", "url": "2024.html" },
+          { "name": "2025", "url": "2025.html" }
+        ]
+      },
+      {
+        "name": "FUN",
+        "files": [
+          { "name": "giveaways", "url": "giveaways.html" },
+          { "name": "screenshoted", "url": "screenshoted.html" },
+          { "name": "sotd", "url": "sotd.html" },
+          { "name": "sobboard", "url": "sobboard.html" },
+          { "name": "polls-qotd", "url": "polls-qotd.html" }
+        ]
+      }
+    ]
+}  

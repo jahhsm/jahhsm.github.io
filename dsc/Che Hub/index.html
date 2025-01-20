@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c2f33;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            width: 250px;
+            background-color: #23272a;
+            padding: 10px;
+        }
+        .menu-section {
+            margin-bottom: 20px;
+        }
+        .menu-section h3 {
+            font-size: 14px;
+            color: #99aab5;
+            text-transform: uppercase;
+            margin: 10px 0;
+        }
+        .menu-item {
+            padding: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            display: block;
+            border-radius: 5px;
+        }
+        .menu-item:hover {
+            background-color: #7289da;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu"></div>
+
+    <script>
+        // Fetch the list of files and categories from a JSON file
+        fetch('files.json')
+          .then(response => response.json())
+          .then(data => {
+              const menu = document.querySelector('.menu');
+
+              data.categories.forEach(category => {
+                  const section = document.createElement('div');
+                  section.className = 'menu-section';
+
+                  const heading = document.createElement('h3');
+                  heading.textContent = category.name;
+                  section.appendChild(heading);
+
+                  category.files.forEach(file => {
+                      const link = document.createElement('a');
+                      link.href = file.url;
+                      link.textContent = file.name;
+                      link.className = 'menu-item';
+                      section.appendChild(link);
+                  });
+
+                  menu.appendChild(section);
+              });
+          })
+          .catch(error => console.error('Error loading files:', error));
+    </script>
+</body>
+</html>
