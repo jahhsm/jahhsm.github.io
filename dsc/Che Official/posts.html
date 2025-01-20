@@ -1,0 +1,2522 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>posts log</title>
+    <style>
+        <html lang="en"><head><title>Discord chat archiving</title><meta charset="utf-8"><meta name="viewport" content="width=device-width"><style>@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-normal-400.woff2");font-family:gg sans;font-weight:400;font-style:normal}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-normal-500.woff2");font-family:gg sans;font-weight:500;font-style:normal}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-normal-600.woff2");font-family:gg sans;font-weight:600;font-style:normal}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-normal-700.woff2");font-family:gg sans;font-weight:700;font-style:normal}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-normal-800.woff2");font-family:gg sans;font-weight:800;font-style:normal}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-italic-400.woff2");font-family:gg sans;font-weight:400;font-style:italic}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-italic-500.woff2");font-family:gg sans;font-weight:500;font-style:italic}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-italic-600.woff2");font-family:gg sans;font-weight:600;font-style:italic}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-italic-700.woff2");font-family:gg sans;font-weight:700;font-style:italic}@font-face{src:url("https://cdn.jsdelivr.net/gh/Tyrrrz/DiscordFonts@master/ggsans-italic-800.woff2");font-family:gg sans;font-weight:800;font-style:italic}html,body{margin:0;padding:0;background-color:#36393e;color:#dcddde;font-family:"gg sans","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;font-weight:400;scroll-behavior:smooth}a{color:#00aff4;text-decoration:none}a:hover{text-decoration:underline}img{object-fit:contain;image-rendering:high-quality;image-rendering:-webkit-optimize-contrast}.preamble{display:grid;grid-template-columns:auto 1fr;max-width:100%;padding:1rem}.preamble__guild-icon-container{grid-column:1}.preamble__guild-icon{max-width:88px;max-height:88px}.preamble__entries-container{grid-column:2;margin-left:1rem}.preamble__entry{margin-bottom:0.15rem;color:#ffffff;font-size:1.4rem}.preamble__entry--small{font-size:1rem}.chatlog{padding:1rem 0;width:100%;border-top:1px solid rgba(255,255,255,0.1);border-bottom:1px solid rgba(255,255,255,0.1)}.chatlog__message-group{margin-bottom:1rem}.chatlog__message-container{background-color:transparent;transition:background-color 1s ease}.chatlog__message-container--highlighted{background-color:rgba(114,137,218,0.2)}.chatlog__message-container--pinned{background-color:rgba(249,168,37,0.05)}.chatlog__message{display:grid;grid-template-columns:auto 1fr;padding:0.15rem 0;direction:ltr;unicode-bidi:bidi-override}.chatlog__message:hover{background-color:#32353b}.chatlog__message:hover .chatlog__short-timestamp{display:block}.chatlog__message-aside{grid-column:1;width:72px;padding:0.15rem 0.15rem 0 0.15rem;text-align:center}.chatlog__reply-symbol{height:10px;margin:6px 4px 4px 36px;border-left:2px solid #4f545c;border-top:2px solid #4f545c;border-radius:8px 0 0 0}.chatlog__avatar{width:40px;height:40px;border-radius:50%}.chatlog__short-timestamp{display:none;color:#a3a6aa;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__message-primary{grid-column:2;min-width:0}.chatlog__reply{display:flex;margin-bottom:0.15rem;align-items:center;color:#b5b6b8;font-size:0.875rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chatlog__reply-avatar{width:16px;height:16px;margin-right:0.25rem;border-radius:50%}.chatlog__reply-author{margin-right:0.3rem;font-weight:600}.chatlog__reply-content{overflow:hidden;text-overflow:ellipsis}.chatlog__reply-link{cursor:pointer}.chatlog__reply-link *{display:inline;pointer-events:none}.chatlog__reply-link .chatlog__markdown-quote{display:inline}.chatlog__reply-link .chatlog__markdown-pre{display:inline}.chatlog__reply-link:hover{color:#ffffff}.chatlog__reply-link:hover *:not(.chatlog__markdown-spoiler){color:inherit}.chatlog__reply-edited-timestamp{margin-left:0.25rem;color:#a3a6aa;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__system-notification-icon{width:18px;height:18px}.chatlog__system-notification-author{font-weight:500;color:#ffffff}.chatlog__system-notification-content{color:#96989d}.chatlog__system-notification-link{font-weight:500;color:#ffffff}.chatlog__system-notification-timestamp{margin-left:0.3rem;color:#a3a6aa;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__system-notification-timestamp a{color:inherit}.chatlog__header{margin-bottom:0.1rem}.chatlog__author{font-weight:500;color:#ffffff}.chatlog__author-tag{position:relative;top:-0.1rem;margin-left:0.3rem;padding:0.05rem 0.3rem;border-radius:3px;background-color:#5865F2;color:#ffffff;font-size:0.625rem;font-weight:500;line-height:1.3}.chatlog__timestamp{margin-left:0.3rem;color:#a3a6aa;font-size:0.75rem;font-weight:500;direction:ltr;unicode-bidi:bidi-override}.chatlog__timestamp a{color:inherit}.chatlog__content{padding-right:1rem;font-size:0.95rem;word-wrap:break-word}.chatlog__edited-timestamp{margin-left:0.15rem;color:#a3a6aa;font-size:0.75rem;font-weight:500}.chatlog__attachment{position:relative;width:fit-content;margin-top:0.3rem;border-radius:3px;overflow:hidden}.chatlog__attachment--hidden{cursor:pointer;box-shadow:0 0 1px 1px rgba(0,0,0,0.1)}.chatlog__attachment--hidden *{pointer-events:none}.chatlog__attachment-spoiler-caption{display:none;position:absolute;left:50%;top:50%;z-index:999;padding:0.4rem 0.8rem;border-radius:20px;transform:translate(-50%,-50%);background-color:rgba(0,0,0,0.9);color:#dcddde;font-size:0.9rem;font-weight:600;letter-spacing:0.05rem}.chatlog__attachment--hidden .chatlog__attachment-spoiler-caption{display:block}.chatlog__attachment--hidden:hover .chatlog__attachment-spoiler-caption{color:#fff}.chatlog__attachment-media{max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__attachment--hidden .chatlog__attachment-media{filter:blur(44px)}.chatlog__attachment-generic{max-width:520px;width:100%;height:40px;padding:10px;border:1px solid #292b2f;border-radius:3px;background-color:#2f3136;overflow:hidden}.chatlog__attachment--hidden .chatlog__attachment-generic{filter:blur(44px)}.chatlog__attachment-generic-icon{float:left;width:30px;height:100%;margin-right:10px}.chatlog__attachment-generic-size{color:#72767d;font-size:12px}.chatlog__attachment-generic-name{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.chatlog__embed{display:flex;margin-top:0.3rem;max-width:520px}.chatlog__embed-color-pill{flex-shrink:0;width:0.25rem;border-top-left-radius:3px;border-bottom-left-radius:3px}.chatlog__embed-color-pill--default{background-color:#202225}.chatlog__embed-content-container{display:flex;flex-direction:column;padding:0.5rem 0.6rem;border:1px solid rgba(46,48,54,0.6);border-top-right-radius:3px;border-bottom-right-radius:3px;background-color:rgba(46,48,54,0.3)}.chatlog__embed-content{display:flex;width:100%}.chatlog__embed-text{flex:1}.chatlog__embed-author-container{display:flex;margin-bottom:0.5rem;align-items:center}.chatlog__embed-author-icon{width:20px;height:20px;margin-right:0.5rem;border-radius:50%}.chatlog__embed-author{color:#ffffff;font-size:0.875rem;font-weight:600;direction:ltr;unicode-bidi:bidi-override}.chatlog__embed-author-link{color:#ffffff}.chatlog__embed-title{margin-bottom:0.5rem;color:#ffffff;font-size:0.875rem;font-weight:600}.chatlog__embed-description{color:#dcddde;font-weight:500;font-size:0.85rem}.chatlog__embed-fields{display:flex;flex-wrap:wrap;gap:0 0.5rem}.chatlog__embed-field{flex:0;min-width:100%;max-width:506px;padding-top:0.6rem;font-size:0.875rem}.chatlog__embed-field--inline{flex:1;flex-basis:auto;min-width:50px}.chatlog__embed-field-name{margin-bottom:0.2rem;color:#ffffff;font-weight:600}.chatlog__embed-field-value{color:#dcddde;font-weight:500}.chatlog__embed-thumbnail{flex:0;max-width:80px;max-height:80px;margin-left:1.2rem;border-radius:3px}.chatlog__embed-images{display:grid;margin-top:0.6rem;grid-template-columns:repeat(2,1fr);gap:0.25rem}.chatlog__embed-images--single{display:block}.chatlog__embed-image{object-fit:cover;object-position:center;max-width:500px;max-height:400px;width:100%;height:100%;border-radius:3px}.chatlog__embed-footer{margin-top:0.6rem;color:#dcddde}.chatlog__embed-footer-icon{width:20px;height:20px;margin-right:0.2rem;border-radius:50%;vertical-align:middle}.chatlog__embed-footer-text{vertical-align:middle;font-size:0.75rem;font-weight:500}.chatlog__embed-invite-container{min-width:320px;padding:0.6rem 0.7rem;border:1px solid rgba(46,48,54,0.6);border-radius:3px;background-color:rgba(46,48,54,0.3)}.chatlog__embed-invite-title{margin:0 0 0.8rem 0;color:#b9bbbe;font-size:0.75rem;font-weight:700;text-transform:uppercase}.chatlog__embed-invite{display:flex}.chatlog__embed-invite-guild-icon{width:50px;height:50px;border-radius:0.85rem}.chatlog__embed-invite-info{margin-left:1rem}.chatlog__embed-invite-guild-name{color:#ffffff;font-weight:600}.chatlog__embed-invite-guild-name a{color:inherit}.chatlog__embed-invite-channel-icon{width:18px;height:18px;vertical-align:bottom}.chatlog__embed-invite-channel-name{font-size:0.9rem;font-weight:600}.chatlog__embed-generic-image{object-fit:contain;object-position:left;max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__embed-generic-video{object-fit:contain;object-position:left;max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__embed-generic-gifv{object-fit:contain;object-position:left;max-width:45vw;max-height:500px;vertical-align:top;border-radius:3px}.chatlog__embed-spotify{border:0}.chatlog__embed-twitch{border:0}.chatlog__embed-youtube-container{margin-top:0.6rem}.chatlog__embed-youtube{border:0;border-radius:3px}.chatlog__sticker{width:180px;height:180px}.chatlog__sticker--media{max-width:100%;max-height:100%}.chatlog__reactions{display:flex}.chatlog__reaction{display:flex;margin:0.35rem 0.1rem 0.1rem 0;padding:0.125rem 0.375rem;border:1px solid transparent;border-radius:8px;background-color:#2f3136;align-items:center}.chatlog__reaction:hover{border:1px solid hsla(0,0%,100%,.2);background-color:transparent}.chatlog__reaction-count{min-width:9px;margin-left:0.35rem;color:#b9bbbe;font-size:0.875rem}.chatlog__reaction:hover .chatlog__reaction-count{color:#dcddde}.chatlog__markdown{max-width:100%;line-height:1.3;overflow-wrap:break-word}.chatlog__markdown h1{margin:1rem 0 0.5rem;color:#f2f3f5;font-size:1.5rem;line-height:1}.chatlog__markdown h2{margin:1rem 0 0.5rem;color:#f2f3f5;font-size:1.25rem;line-height:1}.chatlog__markdown h3{margin:1rem 0 0.5rem;color:#f2f3f5;font-size:1rem;line-height:1}.chatlog__markdown h1:first-child,h2:first-child,h3:first-child{margin-top:0.5rem}.chatlog__markdown ul,ol{margin:0 0 0 1rem;padding:0}.chatlog__markdown-preserve{white-space:pre-wrap}.chatlog__markdown-spoiler{background-color:rgba(255,255,255,0.1);padding:0 2px;border-radius:3px}.chatlog__markdown-spoiler--hidden{cursor:pointer;background-color:#202225;color:rgba(0,0,0,0)}.chatlog__markdown-spoiler--hidden:hover{background-color:rgba(32,34,37,0.8)}.chatlog__markdown-spoiler--hidden::selection{color:rgba(0,0,0,0)}.chatlog__markdown-quote{display:flex;margin:0.05rem 0}.chatlog__markdown-quote-border{margin-right:0.5rem;border:2px solid #4f545c;border-radius:3px}.chatlog__markdown-pre{background-color:#2f3136;font-family:"Consolas","Courier New",Courier,monospace;font-size:0.85rem;text-decoration:inherit}.chatlog__markdown-pre--multiline{display:block;margin-top:0.25rem;padding:0.5rem;border:2px solid #282b30;border-radius:5px;color:#b9bbbe}.chatlog__markdown-pre--multiline.hljs{background-color:#2f3136;color:#b9bbbe}.chatlog__markdown-pre--inline{display:inline-block;padding:2px;border-radius:3px}.chatlog__markdown-mention{border-radius:3px;padding:0 2px;background-color:rgba(88,101,242,.3);color:#dee0fc;font-weight:500}.chatlog__markdown-mention:hover{background-color:#5865f2;color:#ffffff}.chatlog__markdown-timestamp{background-color:rgba(255,255,255,0.1);padding:0 2px;border-radius:3px}.chatlog__emoji{width:1.325rem;height:1.325rem;margin:0 0.06rem;vertical-align:-0.4rem}.chatlog__emoji--small{width:1rem;height:1rem}.chatlog__emoji--large{width:2.8rem;height:2.8rem}.postamble{padding:1.25rem}.postamble__entry{color:#ffffff}</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/solarized-dark.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script><script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.chatlog__markdown-pre--multiline').forEach(e=>hljs.highlightBlock(e));});</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.8.1/lottie.min.js"></script><script>document.addEventListener('DOMContentLoaded',()=>{document.querySelectorAll('.chatlog__sticker--media[data-source]').forEach(e=>{const anim=lottie.loadAnimation({container:e,renderer:'svg',loop:true,autoplay:true,path:e.getAttribute('data-source')});anim.addEventListener('data_failed',()=>e.innerHTML='<strong>[Sticker cannot be rendered]</strong>');});});</script><script>function scrollToMessage(event,id){const element=document.getElementById('chatlog__message-container-'+id);if(!element)
+return;event.preventDefault();element.classList.add('chatlog__message-container--highlighted');window.scrollTo({top:element.getBoundingClientRect().top-document.body.getBoundingClientRect().top-(window.innerHeight/2),behavior:'smooth'});window.setTimeout(()=>element.classList.remove('chatlog__message-container--highlighted'),2000);}
+function showSpoiler(event,element){if(!element)
+return;if(element.classList.contains('chatlog__attachment--hidden')){event.preventDefault();element.classList.remove('chatlog__attachment--hidden');}
+if(element.classList.contains('chatlog__markdown-spoiler--hidden')){event.preventDefault();element.classList.remove('chatlog__markdown-spoiler--hidden');}}</script></head><body><svg style="display:none" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="attachment-icon" viewBox="0 0 720 960"><path fill="#f4f5fb" d="M50,935a25,25,0,0,1-25-25V50A25,25,0,0,1,50,25H519.6L695,201.32V910a25,25,0,0,1-25,25Z"></path><path fill="#7789c4" d="M509.21,50,670,211.63V910H50V50H509.21M530,0H50A50,50,0,0,0,0,50V910a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50h0V191Z"></path><path fill="#f4f5fb" d="M530,215a25,25,0,0,1-25-25V50a25,25,0,0,1,16.23-23.41L693.41,198.77A25,25,0,0,1,670,215Z"></path><path fill="#7789c4" d="M530,70.71,649.29,190H530V70.71M530,0a50,50,0,0,0-50,50V190a50,50,0,0,0,50,50H670a50,50,0,0,0,50-50Z"></path></symbol><symbol id="join-icon" viewBox="0 0 18 18"><path fill="#3ba55c" d="m0 8h14.2l-3.6-3.6 1.4-1.4 6 6-6 6-1.4-1.4 3.6-3.6h-14.2"></path></symbol><symbol id="leave-icon" viewBox="0 0 18 18"><path fill="#ed4245" d="m3.8 8 3.6-3.6-1.4-1.4-6 6 6 6 1.4-1.4-3.6-3.6h14.2v-2"></path></symbol><symbol id="call-icon" viewBox="0 0 18 18"><path fill="#3ba55c" fill-rule="evenodd" d="M17.7163041 15.36645368c-.0190957.02699568-1.9039523 2.6680735-2.9957762 2.63320406-3.0676659-.09785935-6.6733809-3.07188394-9.15694343-5.548738C3.08002193 9.9740657.09772497 6.3791404 0 3.3061316v-.024746C0 2.2060575 2.61386252.3152347 2.64082114.2972376c.7110335-.4971705 1.4917101-.3149497 1.80959713.1372281.19320342.2744561 2.19712724 3.2811005 2.42290565 3.6489167.09884826.1608492.14714912.3554431.14714912.5702838 0 .2744561-.07975258.5770327-.23701117.8751101-.1527655.2902036-.65262318 1.1664385-.89862055 1.594995.2673396.3768148.94804468 1.26429792 2.351016 2.66357424 1.39173858 1.39027775 2.28923588 2.07641807 2.67002628 2.34187563.4302146-.2452108 1.3086162-.74238132 1.5972981-.89423205.5447887-.28682915 1.0907006-.31944893 1.4568885-.08661115.3459689.2182151 3.3383754 2.21027167 3.6225641 2.41611376.2695862.19234426.4144887.5399137.4144887.91672846 0 .2969525-.089862.61190215-.2808189.88523346"></path></symbol><symbol id="pencil-icon" viewBox="0 0 18 18"><path fill="#99aab5" d="m0 14.25v3.75h3.75l11.06-11.06-3.75-3.75zm17.71-10.21c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75z"></path></symbol><symbol id="pin-icon" viewBox="0 0 18 18"><path fill="#b9bbbe" d="m16.908 8.39684-8.29587-8.295827-1.18584 1.184157 1.18584 1.18584-4.14834 4.1475v.00167l-1.18583-1.18583-1.185 1.18583 3.55583 3.55502-4.740831 4.74 1.185001 1.185 4.74083-4.74 3.55581 3.555 1.185-1.185-1.185-1.185 4.1475-4.14836h.0009l1.185 1.185z"></path></symbol><symbol id="channel-icon" viewBox="0 0 24 24"><path fill="#b9bbbe" d="M5.88657 21C5.57547 21 5.3399 20.7189 5.39427 20.4126L6.00001 17H2.59511C2.28449 17 2.04905 16.7198 2.10259 16.4138L2.27759 15.4138C2.31946 15.1746 2.52722 15 2.77011 15H6.35001L7.41001 9H4.00511C3.69449 9 3.45905 8.71977 3.51259 8.41381L3.68759 7.41381C3.72946 7.17456 3.93722 7 4.18011 7H7.76001L8.39677 3.41262C8.43914 3.17391 8.64664 3 8.88907 3H9.87344C10.1845 3 10.4201 3.28107 10.3657 3.58738L9.76001 7H15.76L16.3968 3.41262C16.4391 3.17391 16.6466 3 16.8891 3H17.8734C18.1845 3 18.4201 3.28107 18.3657 3.58738L17.76 7H21.1649C21.4755 7 21.711 7.28023 21.6574 7.58619L21.4824 8.58619C21.4406 8.82544 21.2328 9 20.9899 9H17.41L16.35 15H19.7549C20.0655 15 20.301 15.2802 20.2474 15.5862L20.0724 16.5862C20.0306 16.8254 19.8228 17 19.5799 17H16L15.3632 20.5874C15.3209 20.8261 15.1134 21 14.8709 21H13.8866C13.5755 21 13.3399 20.7189 13.3943 20.4126L14 17H8.00001L7.36325 20.5874C7.32088 20.8261 7.11337 21 6.87094 21H5.88657ZM9.41045 9L8.35045 15H14.3504L15.4104 9H9.41045Z"></path></symbol><symbol id="thread-icon" viewBox="0 0 24 24"><path fill="#b9bbbe" d="M5.43309 21C5.35842 21 5.30189 20.9325 5.31494 20.859L5.99991 17H2.14274C2.06819 17 2.01168 16.9327 2.02453 16.8593L2.33253 15.0993C2.34258 15.0419 2.39244 15 2.45074 15H6.34991L7.40991 9H3.55274C3.47819 9 3.42168 8.93274 3.43453 8.85931L3.74253 7.09931C3.75258 7.04189 3.80244 7 3.86074 7H7.75991L8.45234 3.09903C8.46251 3.04174 8.51231 3 8.57049 3H10.3267C10.4014 3 10.4579 3.06746 10.4449 3.14097L9.75991 7H15.7599L16.4523 3.09903C16.4625 3.04174 16.5123 3 16.5705 3H18.3267C18.4014 3 18.4579 3.06746 18.4449 3.14097L17.7599 7H21.6171C21.6916 7 21.7481 7.06725 21.7353 7.14069L21.4273 8.90069C21.4172 8.95811 21.3674 9 21.3091 9H17.4099L17.0495 11.04H15.05L15.4104 9H9.41035L8.35035 15H10.5599V17H7.99991L7.30749 20.901C7.29732 20.9583 7.24752 21 7.18934 21H5.43309Z"></path><path fill="#b9bbbe" d="M13.4399 12.96C12.9097 12.96 12.4799 13.3898 12.4799 13.92V20.2213C12.4799 20.7515 12.9097 21.1813 13.4399 21.1813H14.3999C14.5325 21.1813 14.6399 21.2887 14.6399 21.4213V23.4597C14.6399 23.6677 14.8865 23.7773 15.0408 23.6378L17.4858 21.4289C17.6622 21.2695 17.8916 21.1813 18.1294 21.1813H22.5599C23.0901 21.1813 23.5199 20.7515 23.5199 20.2213V13.92C23.5199 13.3898 23.0901 12.96 22.5599 12.96H13.4399Z"></path></symbol></defs></svg>
+    </style>
+</head>
+<body>
+    <div class="preamble"><div class="preamble__guild-icon-container"><img class="preamble__guild-icon" src="https://cdn.discordapp.com/icons/1089014169803698217/bae654b56d6bf47a9f198619655e17d0.png?size=1024" alt="Guild icon" loading="lazy"></div><div class="preamble__entries-container"><div class="preamble__entry">Che</div><div class="preamble__entry">🌐 / #posts</div></div></div>
+    <div class="chatlog">
+        
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-21 04:05:42</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video, go check it out! <embed type="video/webm" src="https://youtube.com/embed/v6sXZgf0Je0" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-21 04:06:27</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video, go check it out! <embed type="video/webm" src="https://youtube.com/embed/7dXRmTrpEak" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-21 04:07:25</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video, go check it out! <embed type="video/webm" src="https://youtube.com/embed/ItMz44W834A" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-21 04:08:27</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video, go check it out! <embed type="video/webm" src="https://youtube.com/embed/JXI7jKvs000" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-21 04:09:23</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video, go check it out! <embed type="video/webm" src="https://youtube.com/embed/SbGt-t4LTZg" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-21 04:10:27</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video, go check it out! <embed type="video/webm" src="https://youtube.com/embed/S6oWVhm4Jx8" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/235148962103951360/ed3dac3b6e7a851df781632a4295fcb9.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Carl</span>
+                        <span class="chatlog__timestamp">2023-07-22 17:02:00</span>
+                    </div>
+                    <div class="chatlog__content">che  just uploaded a video @&1131726419538481204 <br>🔗: <embed type="video/webm" src="https://youtube.com/embed/imdXbh7Sn7Q" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1131942665873784872.png" alt="<:1f8:1131942665873784872>" loading="lazy">
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-08-04 19:01:21</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che just uploaded a new video! <br><embed type="video/webm" src="https://youtube.com/embed/mmzFInCZiek" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1131942665873784872.png" alt="<:1f8:1131942665873784872>" loading="lazy">
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1101755261691117630.png" alt="<:pepesad:1101755261691117630>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-08-05 19:30:17</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che just uploaded a new video! <br><embed type="video/webm" src="https://youtube.com/embed/TG-4OfuGE6A" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>6</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132107849053511832.png" alt="<:Closed_Captions:1132107849053511832>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/819750603978571796/60a2b80d1ae08398ecd892d6f5d4b589.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">fancy</span>
+                        <span class="chatlog__timestamp">2023-08-05 19:36:13</span>
+                    </div>
+                    <div class="chatlog__content">@everyone run this up for admin</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😂</span>
+                        <span>10</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🙏</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1101892846010773504.png" alt="<:bluecookie:1101892846010773504>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🥺</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🚜</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/965733304429084763/68c8a9cf1f8606bd33923758c2bf90a7.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">zex</span>
+                        <span class="chatlog__timestamp">2023-08-05 20:16:27</span>
+                    </div>
+                    <div class="chatlog__content">chill dont @ everyone</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-08-18 21:34:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1142209823119777792/sipmansion_7268777521913564459.mp4?ex=678ec14b&is=678d6fcb&hm=40a612beb9554cc008a23b83518cd83e2ab2d87e3f2db9b61a7aee00a6a4852d&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🥺</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🇨</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🇭</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🇪</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😭</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-08-20 23:47:10</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1142968101558825012/sipmansion_7269552907467492650.mp4?ex=678ee07e&is=678d8efe&hm=d197011fa62e7b5c0b2289ecb7ee408e414dd52da7ce7aef8f2df3eeec53d811&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>5</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🤣</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😍</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-08-24 18:03:00</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1144331040698155018/sipmansion_7270949578856303915.mp4?ex=678e8fd4&is=678d3e54&hm=32d6d65454246e7e004042cfdfd41f8e2a32f54adc686dd76c9e797d95236e19&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1134401958581641276.png" alt="<:W_:1134401958581641276>" loading="lazy">
+                        <span>8</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-09-28 20:28:35</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1157051253302513734/sipmansion_7283975616762989870.mp4?ex=678eb1f3&is=678d6073&hm=20309a676364a394e5b5e4ee683779c21fa711108b64c6242d8266ed5e08d837&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>8</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>7</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-09-30 20:48:07</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1157780945353592962/sipmansion_7284721885332475182.mp4?ex=678eb687&is=678d6507&hm=0e77a0094a598606b2691882df89f0b4c06b1a59d327f723f762cefc262632c2&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>12</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>6</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🥵</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔞</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-11 04:16:48</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/X8ASg-O_0_s" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-11 04:17:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/h2BkI07cAUs" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1131942665873784872.png" alt="<:1f8:1131942665873784872>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1134401958581641276.png" alt="<:W_:1134401958581641276>" loading="lazy">
+                        <span>4</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-11 19:53:47</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/YxsPtf0SzC0" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-11 19:55:22</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/zalUMGcxUX8" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-11 20:00:11</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/iYQbPEnt2A8" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-11 20:01:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/3FDKgjjnxl0" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/819750603978571796/60a2b80d1ae08398ecd892d6f5d4b589.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">fancy</span>
+                        <span class="chatlog__timestamp">2023-10-11 20:05:52</span>
+                    </div>
+                    <div class="chatlog__content">my nigga shut the fuck up!</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1134401958581641276.png" alt="<:W_:1134401958581641276>" loading="lazy">
+                        <span>11</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">☠️</span>
+                        <span>7</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-10-12 20:24:41</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1162123700993265704/sipmansion_7289168760441785643.mp4?ex=678eb109&is=678d5f89&hm=57b5d0e766e3d8bdcd6e4c3478a7fc0be3dcb98eee9724b0961ead4a173991f0&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/819750603978571796/60a2b80d1ae08398ecd892d6f5d4b589.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">fancy</span>
+                        <span class="chatlog__timestamp">2023-10-12 20:25:51</span>
+                    </div>
+                    <div class="chatlog__content">🤩</div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-14 19:00:24</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/4tjhN4iSPtM" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">👍</span>
+                        <span>13</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💦</span>
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-10-26 23:03:43</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1167237153441452182/sipmansion_7294405153401097514.mp4?ex=678ed64f&is=678d84cf&hm=cd5090c5908343caeed6ba8b5be7a8ba2e936e2ac77e3e94a302d86bebb092d1&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>9</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-10-27 22:13:45</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1167586965873508563/sipmansion_7294763780544974126.mp4?ex=678eca99&is=678d7919&hm=b4dc2470712ce77ba4936101c17a0081cb1c7fe669801c2056cffc653c1c6452&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😩</span>
+                        <span>7</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🍆</span>
+                        <span>8</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💦</span>
+                        <span>7</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1134401958581641276.png" alt="<:W_:1134401958581641276>" loading="lazy">
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-10-30 19:56:19</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1168639542585196554/sipmansion_7295841561009556779.mp4?ex=678eaa63&is=678d58e3&hm=8f72a38f5e3fbd9f4726501bd98f7b9a5c9e9f1c7bd6487a7378525d9f80825a&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💪</span>
+                        <span>9</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🤙</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:01:24</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/tKMoISsRywY" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:02:21</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/bbzSxEGYr7A" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:03:30</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/wXLdSAM4Afs" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:03:41</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/380FpjihEwA" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:04:25</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/lk3Q_elen8I" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:05:13</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/X66201MgyAA" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:05:14</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/PnOcSd8zb50" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:05:28</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/ZMc-QUJnZbg" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-10-31 04:07:02</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/Z0PTjK7XfeI" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-11-01 20:37:39</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204</div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1169374722753048587/sipmansion_7296594255370325294.mp4?ex=678eb413&is=678d6293&hm=e3909fca38ea86e5905b77d53837abd4ea7988289d9d9d03a0957bec24ea7de0&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😩</span>
+                        <span>7</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2023-11-08 20:00:33</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/1pNvG6T4JLw" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>9</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132139011234861127.png" alt="<:1f2:1132139011234861127>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">👯‍♂️</span>
+                        <span>1</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132140405023064135.png" alt="<:1f8:1132140405023064135>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2023-11-26 05:23:35</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2023-11-26 10:28:15</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-11-29 21:49:39</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/dsl4tfq2hl7ktqxbcu0tkybp.mp4) [.](https://freshtok.bot/share/dsl4tfq2hl7ktqxbcu0tkybp)</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132138780137107506.png" alt="<:1f:1132138780137107506>" loading="lazy">
+                        <span>11</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💜</span>
+                        <span>4</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-12-02 20:01:41</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/io36rth9li9nt0ofrk5xxfwh.mp4) [.](https://freshtok.bot/share/io36rth9li9nt0ofrk5xxfwh)</div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2023-12-21 02:29:16</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2023-12-21 18:57:38</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/ozsng3qpgixn3wsol35jumz0.mp4) [.](https://freshtok.bot/share/ozsng3qpgixn3wsol35jumz0)</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😔</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😘</span>
+                        <span>5</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2023-12-23 00:25:04</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2023-12-23 23:19:22</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2023-12-24 00:47:03</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-01 01:59:46</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-01 01:59:47</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😨</span>
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-21 21:23:43</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-21 21:23:45</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-21 21:23:46</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-21 21:23:48</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-22 03:33:09</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1198832703320100965/bleedTWOYkK36JDw6L5R.mp4?ex=678f1575&is=678dc3f5&hm=dda1379f070b0fe659a44c557543c682fe02b8541a6ac492f106cac737cd4848&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-22 03:33:19</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1198832746055880734/bleedTWXDwW8pYlEOEy5.mp4?ex=678f157f&is=678dc3ff&hm=9e62251581bec0d7b6c46c4d28456f30e188dd4f8db5ae7dbb065dcac1a92f4b&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-27 01:39:32</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-27 19:51:05</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1200890747361165322/bleedTWKrBpo5Z1pNZvl.mp4?ex=678ea929&is=678d57a9&hm=34b40de43ee50af28af9020c159119604ccde35d19d7424b5ef645bd01d1bc72&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-01-27 19:51:10</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1200890766352994477/bleedTW31vAqK2QW1w0p.mp4?ex=678ea92e&is=678d57ae&hm=eeb763572be864c2c29ec5c6e723dac7b347babdad3da53d0c3febfc818c629d&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2024-02-04 20:53:42</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/fhfqimosh13gbknjf3g60f85.mp4) [.](https://freshtok.bot/share/fhfqimosh13gbknjf3g60f85)</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😍</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-02-05 21:10:31</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-02-06 19:38:58</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-02-13 20:18:17</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1207058185513467964/bleedTWDkr4MzV3Lxgyk.mp4?ex=678eaf89&is=678d5e09&hm=f9c1f3be8fcee5e1f99ce01142cec26ac34371918bf511a5c47aaac4ab38016b&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2024-02-13 20:23:40</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/lsvcj0m944u06si9elylm952.mp4) [.](https://freshtok.bot/share/lsvcj0m944u06si9elylm952)</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🅰️</span>
+                        <span>1</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🇸</span>
+                        <span>1</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😥</span>
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-02-14 03:53:53</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/OZ9b_psvEC8" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🇼</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-02-14 05:11:27</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🤓</span>
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-03-01 04:28:56</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-03-02 02:38:32</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-03-11 02:50:59</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2024-03-17 19:56:32</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/sv5c7y3q7owsofdhz25rw0dr.mp4) [.](https://freshtok.bot/share/sv5c7y3q7owsofdhz25rw0dr)</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1132140405023064135.png" alt="<:1f8:1132140405023064135>" loading="lazy">
+                        <span>4</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-03-27 05:07:18</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-03-27 23:35:18</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-04-03 19:55:08</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-04-03 22:32:30</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/yHLxZKLSkvo" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-04-03 22:51:50</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-04-05 20:25:12</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-04-12 21:57:54</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-04-23 21:10:38</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-01 22:20:26</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-02 21:02:26</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-04 17:39:11</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-06 01:20:27</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-06 17:12:54</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-07 18:39:21</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-11 00:13:00</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-11 15:04:00</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-16 00:14:34</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1240457333067350116/bleedTWQWq0Pw69PQ7NM.mp4?ex=678ee6ea&is=678d956a&hm=71e14add1b78954e9bdf9e472fd426dd79c3263d2286e5db7ad807fb9290b539&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-20 18:54:42</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/890842672133201950/1521042cba042a3b901afb26939cbed5.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">FreshTok</span>
+                        <span class="chatlog__timestamp">2024-05-21 20:29:20</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 [.](https://freshtok.bot/api/post/pj7owi4htxw6mv76m5pn1mk9.mp4) [.](https://freshtok.bot/share/pj7owi4htxw6mv76m5pn1mk9)</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🗣️</span>
+                        <span>9</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">✅</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🍕</span>
+                        <span>4</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-24 18:29:49</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-28 19:14:32</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-05-29 04:00:29</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/Ew5-ygNHV2g" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😭</span>
+                        <span>7</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🐱</span>
+                        <span>6</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💯</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🍕</span>
+                        <span>5</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">⏲️</span>
+                        <span>1</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1253954548062748753.png" alt="<:CatGlo:1253954548062748753>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-29 04:34:15</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-29 22:09:28</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-05-31 03:55:33</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1245948764565274674/bleedTWYEB7k41WnA44M.mp4?ex=678f1ab6&is=678dc936&hm=80381191a0af9236ac32ad48eb80f5d62fb3f725657ebe81d8086f47ac6b8b2a&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-06-08 14:29:52</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-06-13 16:00:36</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-07-07 00:12:24</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😗</span>
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-07-10 19:11:34</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1260674798090977371/bleedTW737WrEzppKKR8.mp4?ex=678e9fe6&is=678d4e66&hm=f350f83f7265e3af33b8dff2e7e2f72cae09577a150311e4aba0b70d111e370a&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>16</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😿</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1253954548062748753.png" alt="<:CatGlo:1253954548062748753>" loading="lazy">
+                        <span>6</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-07-11 01:04:11</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-07-16 20:29:36</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💯</span>
+                        <span>16</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🤡</span>
+                        <span>13</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😪</span>
+                        <span>5</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-08-05 18:12:57</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions"></div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-08-06 01:36:23</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❤️</span>
+                        <span>9</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/819750603978571796/60a2b80d1ae08398ecd892d6f5d4b589.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">fancy</span>
+                        <span class="chatlog__timestamp">2024-08-28 01:07:18</span>
+                    </div>
+                    <div class="chatlog__content">https://www.instagram.com/p/C_MH_tByZ0P/<br>@&1131726419538481204  RUN THIS UP</div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🐌</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❌</span>
+                        <span>5</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>5</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/819750603978571796/60a2b80d1ae08398ecd892d6f5d4b589.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">fancy</span>
+                        <span class="chatlog__timestamp">2024-08-28 01:11:45</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204 @&1131726418028531712 Who's hyped up?! via: praiseche Instagram story</div>
+                    <embed type="image/jpg" src="https://cdn.discordapp.com/attachments/1131720617075408976/1278160058102054922/457195983_1203833750854170_5091067593224003638_n.jpg?ex=678ef450&is=678da2d0&hm=1e1db726f06750a8712eb2f0aed77d68424c419259f4810304cec62cd32def0c&" width="auto" height="300">
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>15</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1274554912918863892.png" alt="<:CheSideeye:1274554912918863892>" loading="lazy">
+                        <span>7</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1274556532821987411.png" alt="<:Cmonnownigga:1274556532821987411>" loading="lazy">
+                        <span>5</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/m9GB3CVeKpo" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/VegSbAW2RUU" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/div6tE5hAF4" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:03</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/1S0kQvFhx7Q" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:04</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/nDEkBQC6Z7w" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>2</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:04</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/TFs5g7q70Vw" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:04</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/pxnpLSpwm5Q" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:04</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/A3VB5t82B2M" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:05</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/78Z_As__dyg" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>3</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:06</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/_Cghu7nkiYs" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:06</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/8vTxOrDwp4Y" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:06</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/I4MMMrKWBdE" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:07</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/pt4vwfz9_C0" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:07</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/v03j55qjrdc" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:09</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/BVV2HPpyNq0" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>2</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/1132938549524701294/a06062af9b11085ab715e340deaab267.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">Dyno</span>
+                        <span class="chatlog__timestamp">2024-08-30 04:01:10</span>
+                    </div>
+                    <div class="chatlog__content">@&1131726419538481204<br>Che uploaded a new video! ⤵️<br><embed type="video/webm" src="https://youtube.com/embed/sh4mmSxCk-w" width="400" height="300"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>9</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>15</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279080282829361223.png" alt="<:SaysoSays:1279080282829361223>" loading="lazy">
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-09-01 18:20:25</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>20</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <img class="chatlog__emoji" src="https://cdn.discordapp.com/emojis/1279105037448122408.png" alt="<:CheSippin:1279105037448122408>" loading="lazy">
+                        <span>4</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-10-09 22:41:57</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>6</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>8</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2024-11-30 23:49:29</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🪥</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">💀</span>
+                        <span>4</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">😫</span>
+                        <span>3</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">❓</span>
+                        <span>1</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🤡</span>
+                        <span>1</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chatlog__message">
+                <div class="chatlog__message-aside">
+                    <img class="chatlog__avatar" src="https://cdn.discordapp.com/avatars/593921296224747521/4f0d42f6f7006bade9bcb94f980d770a.png?size=1024" alt="Avatar">
+                </div>
+                <div class="chatlog__message-primary">
+                    <div class="chatlog__header">
+                        <span class="chatlog__author">bleed</span>
+                        <span class="chatlog__timestamp">2025-01-15 05:37:44</span>
+                    </div>
+                    <div class="chatlog__content"></div>
+                    <video width="auto" height="500" controls=""> <source src="https://cdn.discordapp.com/attachments/1131720617075408976/1328961298104586272/bleedTWAD7vj4BEqMJYP.mp4?ex=678e89e8&is=678d3868&hm=edf7615ef2f685c0e2af2d9babffae8b7f77e9190d0ec20c325ad7540604ac9e&"type="video/mp4">Your browser does not support the video tag.</video>
+                    <div class="chatlog__reactions">
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🟢</span>
+                        <span>5</span>
+                    </div>
+                    
+                    <div class="chatlog__reaction">
+                        <span class="chatlog__emoji">🔥</span>
+                        <span>5</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+</body>
+</html>
