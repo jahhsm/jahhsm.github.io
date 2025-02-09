@@ -1,5 +1,5 @@
 #SingleInstance, force
-G::
+T::
     holdTime := 328.8833
     Tooltip, Holding "E for" %holdTime%ms...
     Send, {e down}
