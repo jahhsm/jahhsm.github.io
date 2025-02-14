@@ -71,3 +71,15 @@ footer {
     text-align: center;
     padding: 20px 0;
 }
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f4f4f9;
+}
+
+.dark-mode header {
+    background: linear-gradient(135deg, #111, #222);
+}
+
+.dark-mode .hero {
+    background: linear-gradient(135deg, #222, #333);
+}
