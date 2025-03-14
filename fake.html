@@ -40,7 +40,12 @@
     <div id="chat"></div>
 
     <script>
-        const usernames = ["xbox", "playstation", "nintendo", "steam", "epic", "twitch", "youtube", "discord", "gamer", "streamer"];
+        // Arrays for generating random usernames
+        const adjectives = ["Arrogant", "Brave", "Clever", "Daring", "Eager", "Fierce", "Gentle", "Happy", "Iron", "Jolly", "Kind", "Lucky", "Mighty", "Noble", "Obedient", "Proud", "Quick", "Radiant", "Swift", "Tough"];
+        const nouns = ["Drake", "Falcon", "Wolf", "Tiger", "Lion", "Eagle", "Shark", "Bear", "Fox", "Hawk", "Panther", "Rhino", "Dragon", "Phoenix", "Raven", "Leopard", "Orca", "Grizzly", "Puma", "Viper"];
+        const numbers = Array.from({ length: 1000 }, (_, i) => i); // Numbers from 0 to 999
+
+        // Arrays for random messages
         const messages = [
             "PogChamp!",
             "This is awesome!",
@@ -56,14 +61,20 @@
 
         const chat = document.getElementById('chat');
 
+        // Function to generate a random username
         function getRandomUsername() {
-            return usernames[Math.floor(Math.random() * usernames.length)];
+            const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const noun = nouns[Math.floor(Math.random() * nouns.length)];
+            const number = numbers[Math.floor(Math.random() * numbers.length)];
+            return `${adjective}${noun}${number}`;
         }
 
+        // Function to get a random message
         function getRandomMessage() {
             return messages[Math.floor(Math.random() * messages.length)];
         }
 
+        // Function to add a message to the chat
         function addMessage() {
             const messageElement = document.createElement('div');
             messageElement.className = 'message';
