@@ -28,7 +28,6 @@
             padding-bottom: 4px; /* Prevent clipping */
         }
         .username {
-            color: #9147FF;
             font-weight: bold;
         }
         .badge {
@@ -46,28 +45,34 @@
     <div id="chat"></div>
 
     <script>
+        const usernameColors = ["red", "green", "#40b7b5", "blue", "purple", "#aa9929"];
+        
         const adjectives = ["wavy", "playmaker", "5star.", "toxicc", "BH", "plaqueboy", "ballhog", "ADOLF", "OG", "imviral", "im", "crazy", "universal", "sick", "insane", "cool", "fun", "mad", "generic",
-    "Cpt", "nice", "adolf", "Dan", "VAC", "SWE", "Wizard", "faceless", "olof",
-    "best_", "daddy", "mama", "mister_", "davai", "Nick", "de_", "the_", "iAm",
-    "Loungin", "extra", "BOT", "dirty", "shoutout_to_", "devil", "Only"];
+        "Cpt", "nice", "adolf", "Dan", "VAC", "SWE", "wwizard", "faceless", "olof",
+        "best_", "daddy", "mama", "mister_", "davai", "Nick", "de_", "the_", "iAm",
+        "Loungin", "extra", "BOT", "dirty", "shoutout_to_", "devil", "Only"];
         const nouns = ["ferta", "racu", "jahxtf", "juggmyslatt", "lxstk1", "jd", "stanclickin", "raqo", "jajooh", "nikog", "sashv", "andrew", "nick", "roziah", "rozo", "rolo", "bentley","Kappa", "Sniper", "marshmellow", "Shrek", "M", "LUL", "Games", "HD", "lolo",
-    "_yolo", "QQ", "stone", "Trump", "xD", "meister", "eric", "james", "loser",
-    "haha", "noob", "dude", "Bro", "shotgun", "DADDY", "OneTaps", "winner",
-    "xx", "pepe", "explosion", "easy", "Nut", "000", "Biceps", "gamer", "Majestic",
-    "zzzzz", "vortex", "sound", "tv" ];
+        "_yolo", "QQ", "stone", "Trump", "xD", "meister", "eric", "james", "loser",
+        "haha", "noob", "dude", "Bro", "shotgun", "DADDY", "OneTaps", "winner",
+        "xx", "pepe", "explosion", "easy", "nut", "000", "Biceps", "gamer", "majestic",
+        "zzzzz", "vortex", "sound", "tv" ];
         
         function getRandomUsername() {
             const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
             const noun = nouns[Math.floor(Math.random() * nouns.length)];
-            const number = Math.floor(Math.random() * 999);
+            const number = Math.floor(Math.random() * 88);
             return `${adj}${noun}${number}`;
+        }
+        
+        function getRandomColor() {
+            return usernameColors[Math.floor(Math.random() * usernameColors.length)];
         }
 
         const messages = [
             "Boy slow down", "Wavy asf", "JAHH GOATED", "LMAO", "🔥🔥🔥", "Nahhh that's wild", "Bro got cooked", "RARE JAH W", "ayaya", "ts ass brodigy", "SKIP SONG", "W", "BibleThump", "LLLLL", "W", "BRO JAH SKIP DAT", "W mans 🏆🔥", "Sheeeesh", "L streamer", "Ratio + L + Cope", 
-    "No way 😭", "Bro sold the clip 💀", "Mans really thought he had it Boy slow down",
-    "Drop the distrack", "JAH GOATED 🔥🔥", "Bro lost in the sauce", "Rare JAH W 🏆",
-    "Mods asleep?", "Mid tbh", "JAHHH too wavy fr", "This is comedy gold"
+            "No way 😭", "Bro sold the clip 💀", "Mans really thought he had it Boy slow down",
+            "Drop the distrack", "JAH GOATED 🔥🔥", "Bro lost in the sauce", "Rare JAH W 🏆",
+            "Mods asleep?", "Mid tbh", "JAHHH too wavy fr", "This is comedy gold"
         ];
         
         const emotes = {
@@ -89,6 +94,7 @@
             const usernameElement = document.createElement('span');
             usernameElement.className = 'username';
             usernameElement.textContent = getRandomUsername() + ': ';
+            usernameElement.style.color = getRandomColor();
             messageElement.appendChild(usernameElement);
 
             const textElement = document.createElement('span');
