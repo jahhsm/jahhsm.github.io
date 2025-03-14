@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plaqueboymax Twitch Chat</title>
+    <title>fake Twitch Chat</title>
     <style>
         body {
             background: transparent;
@@ -46,21 +46,27 @@
     <div id="chat"></div>
 
     <script>
-        const usernames = ["MaxFan1", "BigPlaque", "WavyVibes", "ChatKing", "GoatedViewer", "ToxicLurker", "EmoteSpammer"];
+        const adjectives = ["Wavy", "Goated", "Big", "Toxic", "Max", "Plaque", "Legend", "Rare", "OG", "Viral"];
+        const nouns = ["Fan", "Viewer", "Lurker", "King", "Demon", "Ghost", "Spammer", "Vibes", "Boss", "Goat"];
+        
+        function getRandomUsername() {
+            const adj = adjectives[Math.floor(Math.random() * adjectives.length)];
+            const noun = nouns[Math.floor(Math.random() * nouns.length)];
+            const number = Math.floor(Math.random() * 9999);
+            return `${adj}${noun}${number}`;
+        }
+
         const messages = [
             "W mans", "Wavy asf", "MAX GOATED", "LMAO", "🔥🔥🔥", "Nahhh that's wild", "Bro got cooked", "RARE MAX W"
         ];
+        
         const emotes = {
-            "W mans": "wman.png",
-            "Wavy asf": "wavy.png",
-            "MAX GOATED": "goated.png"
+            "W mans": "wman.gif",
+            "Wavy asf": "wavy.gif",
+            "MAX GOATED": "goated.gif"
         };
         
         const chat = document.getElementById('chat');
-
-        function getRandomUsername() {
-            return usernames[Math.floor(Math.random() * usernames.length)];
-        }
 
         function getRandomMessage() {
             return messages[Math.floor(Math.random() * messages.length)];
