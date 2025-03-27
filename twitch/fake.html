@@ -8,7 +8,7 @@
         body {
             background: transparent;
             color: white;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 14px;
             margin: 0;
             padding: 0;
@@ -25,14 +25,28 @@
         .message {
             margin: 2px 0;
             line-height: 1.4;
-            padding-bottom: 4px;
+            padding: 4px 0;
+            opacity: 0;
+            animation: fadeIn 0.3s ease-out forwards;
+            word-wrap: break-word;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .username {
             font-weight: bold;
+            margin-right: 4px;
         }
         .emote {
             height: 20px;
             vertical-align: middle;
+            margin: 0 1px;
+        }
+        .badge {
+            height: 18px;
+            vertical-align: middle;
+            margin-right: 3px;
         }
     </style>
 </head>
@@ -40,29 +54,19 @@
     <div id="chat"></div>
 
     <script>
-        const usernameColors = ["red", "green", "#40b7b5", "blue", "purple", "#aa9929"];
+        // ====== ADJUST THIS VALUE TO CHANGE SPEED ======
+        // Lower = faster (minimum 100), Higher = slower
+        const BASE_DELAY_MS = 500; 
+        // ===============================================
+
+        const usernameColors = ["#FF4500", "#0EBC7D", "#1DA1F2", "#9147FF", "#EB039E", "#DC143C", "#00AEEA", "#FF69B4", "#8A2BE2"];
         const storedUsernames = new Set();
-        /*
-        const adjectives = ["wavy", "playmaker", "5star.", "toxicc", "BH", "plaqueboy", "ballhog", "ad0lfkk", "OG", "imviral", "im", "crazy", "univseral", "sick", "insane", "cool", "fun", "mad", "genericdepressed",
-        "Cpt", "nice", "adolf", "dan", "VAC", "SWE", "wwizard", "faceless", "olof",
-        "best_", "daddy", "mama", "mister_", "davai", "nnick", "de_", "the_", "iAm",
-        "ballhoggin", "extra", "botK", "dirty", "shoutout_to_", "devil", "only",
-        "overly_trim", "playboi", "booly", "luh", "oh", "0h", "bebop", "kr1s", 
-        "ionshopat", "lu", "juggmy","lxst", "quik", "1real"];
-        const nouns = ["ferta", "racu", "jahxtf", "juggmyslatt", "lxstk1", "jd", "stanclickin", "raqo", "jajooh", "nikog", "SASHVIN", "andrew","TK", "nick", "roziah", "rozo", "rolo", "bentley","kappppa", "snniper", "marshmellow", "shrek", "M", "slimek", "onkk", "superhd23", "lolo",
-        "_yolo", "QQ", "stone", "trumpK", "xD", "meister", "77eric", "james", "loser",
-        "haha", "noob", "dude", "bbrot", "shotgun", "DADDY", "1onetaps1", "winner",
-        "xx", "pepe", "xxxxplosion", "easy", "nut", "000", "Biceps", "gamer", "majestic",
-        "zzzzz", "vortex", "41sound", "65tv", "kr1ngle", "luvv", "luv", "nxgga", 
-        "NXGGA", "Nxgga", "sxnta", "Sxnta", "SXNTA", "k", "racks", "noah999", "chris521", "saks",
-        "kingslime", "originalkingyn", "jug", "ihymar"];
-        const numbers = ["","808","555", "777", "808s", "123987", "crashaht", "saks5th", "007", "009"];
-        */
+        
         const adjectives = [
-        "wavy", "playmaker", "5star", "toxicc", "plaqueboy", "ballhog", "OG", "imviral", 
-        "crazy", "sick", "insane", "cool", "mad", "best_", "daddy", "mister_", "devilboy", 
-        "onlythereal", "playboi_", "imwitbooly", "superbebop", "kr1s", "lxst", "quik", "1real", "crashaht", "overly_trim.",
-        "shoutout_to_", "ionshopat"
+            "wavy", "playmaker", "5star", "toxicc", "plaqueboy", "ballhog", "OG", "imviral", 
+            "crazy", "sick", "insane", "cool", "mad", "best_", "daddy", "mister_", "devilboy", 
+            "onlythereal", "playboi_", "imwitbooly", "superbebop", "kr1s", "lxst", "quik", "1real", "crashaht", "overly_trim.",
+            "shoutout_to_", "ionshopat"
         ];
 
         const nouns = [
@@ -76,7 +80,6 @@
 
         const numbers = ["", "808", "555", "777", "123", "007", "009"];
 
-
         function getRandomUsername() {
             if (adjectives.length > 0 && nouns.length > 0) {
                 const adjIndex = Math.floor(Math.random() * adjectives.length);
@@ -85,20 +88,15 @@
 
                 const username = adjectives[adjIndex] + nouns[nounIndex] + numbers[numIndex];
 
-                // Remove the used adjective and noun so they don't repeat
                 adjectives.splice(adjIndex, 1);
                 nouns.splice(nounIndex, 1);
 
-                // Store the username for future reuse
                 storedUsernames.add(username);
-
                 return username;
             } else if (storedUsernames.size > 0) {
-                // If all adjectives & nouns are used, pick a random saved username
                 const savedUsernamesArray = Array.from(storedUsernames);
                 return savedUsernamesArray[Math.floor(Math.random() * savedUsernamesArray.length)];
             } else {
-                // Fallback username if something goes wrong
                 return "User" + Math.floor(Math.random() * 1000);
             }
         }
@@ -111,27 +109,10 @@
             "Boy slow down", "Wavy asf", "JAHH GOATED", "LMAO", "🔥🔥🔥", "Nahhh that's wild", "Bro got cooked", "RARE JAH W", "ayaya", "ts ass brodigy", "SKIP SONG", "W", "BibleThump", "LLLLL", "W", "BRO JAH SKIP DAT", "W mans 🏆🔥", "Sheeeesh", "L streamer", "Ratio + L + Cope", 
             "No way 😭", "Bro sold the clip 💀", "Mans really thought he had it", "Drop the diss track", "JAH GOATED 🔥🔥", "Bro lost in the sauce", "Rare JAH W 🏆", "Mods asleep?", "Mid tbh", "JAHHH too wavy fr", "This is comedy gold", "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL", 
             "kvs", "MODSSSSSSSSSSSSSSSSSS", "kevingates", "TOSSS", "summrs", "desperate", "shaq", "shaqq", "wolf", "balkan", "Fakedemon", "33", "carson wents", "gotta keep my head up", "ima be the same even wit the fame", "u seen that new gloinpce tiktok", "u seen that new tq tiktok", 
-            "U HEARD DAT NEW NETTSPEND", "we good bro", "Nahhh he really just did that", "Free him", "JAH NEEDS TO COOK", "Packwatch 💀", "This chat too funny", "Song name?", "On god", "Nah cause why he do that", "That’s crazy", "No kizzy", "Fax no printer", "He lowkey spitting", "Highkey a L", "Ratio", 
-            "Mods wake up", "I’m crying", "BAHAHAHAHA", "That’s tough", "Let him cook", "Bro sold", "He moving different", "Certified classic", "That’s a heater", "Get sturdy", "Spamming W", "Respectfully nah", "Certified banger", "Clip that", "Put that on TikTok", "Bro cooked himself", "This stream undefeated", 
-            "This gotta be scripted", "100% TOS", "How he get away with this", "Mods are cooked", "Emote only chat", "Nah he different", "BIG W", "RARE L", "Put it on the gram", "Twitter boutta go crazy", "Drop the addy", "Capped out", "Unspoken rizz", "L take", "W take", "Best stream ever", "Legendary", 
-            "We witnessing history", "Bro think he in a movie", "Somebody check on him", "This gotta be a social experiment", "Manz really thought he did something", "jah boutta tweak", "Jah moving federal", "Ain’t no way", "Somebody clip this", "He wilding", "Red flag", "Chat in shambles", 
-            "Chat moving too fast", "What did he say?!", "Run it back", "Say it louder", "TOS incoming", "They banned him?!", "Stream sniping", "jah too funny", "He lost the bet", "Thats a cold take", "Massive W", "He folded", "Nahhh chat too devious", "Bruh", "Who mans is this?", "He done for", "Send him to the gulag", 
-            "It’s wraps", "Lights out", "Certified hood classic", "Pack in the air", "Free the real", "Thats a mean L", "Homie tweaking", "Flop era", "This gotta be a prank", "He fell off", "Bro really thought he was him", "AIN’T NO WAY BOY", "Boy ain’t no way", "Put him in the montage", "Soundtrack of the year", 
-            "This go crazy", "Loudest mic in history", "Mic peaking", "Mic muted", "Fix the audio", "Turn him up", "Turn him down", "W chat", "L chat", "We up", "They hating", "Most hated streamer", "They love to see him fail", "They preying on his downfall", "Stay mad", "Keep coping", "Skill issue", "Touch grass", 
-            "NPC behavior", "Mid content", "Bro got exposed", "They caught him in 4K", "Who let him cook?", "Nahhh delete this", "Stream highlight", "This the peak of entertainment", "Top tier content", "Chat undefeated", "Best community", "Ain’t nobody doing it like him", "Too real", "Too funny", "jah a menace", 
-            "Jah too unpredictable", "How did we get here?", "Somebody explain", "Internet undefeated", "Nah this gotta be fake", "Bro a troll", "Loud equals funny", "It’s over", "Bro cooked for real", "That was a setup", "They set him up", "Stay woke", "Y’all sheep", "Chat is wilding", "Ban him", "Unban him", 
-            "Mod check", "Stream delay crazy", "The lag is unreal", "Internet provider needs a buff", "Wi-Fi moving slow", "Thats a world record", "Put it in the books", "RIP headphone users", "Bro violated", "That’s def a lawsuit", "Somebody suing", "Sue him", "Y’all tripping", "It’s not that deep", 
-            "Plot twist", "They planned this", "Bro got ratioed live", "Twitter finna eat this up", "Trending soon", "Cancel culture incoming", "This the funniest thing ever", "Bro need to retire", "Stream over", "Game over", "We witnessing history", "Ain’t nobody doing it like him", "Content king", "Next level", 
-            "GOATed", "Legendary stream", "Instant classic", "Moment of the year", "Nah this too much", "He gotta chill", "Somebody get him", "This clip finna go viral", "TikTok finna love this", "This like a movie fr", "Bro glitching", 
-            "He lagging irl", "jah finna break something", "Jah boutta snap", "Whole squad wilding", "Peak entertainment", "jah got no fear", "This the internet at its finest", "Ban speedrunners", "Twitch finna act up", "Nahhh the devs watching", "Free my guy", "Get him outta there", "Somebody save him", 
-            "He fumbled", "That’s a GG", "Bro caught in 4K Ultra HD", "Stream going down in history", "Thats top 10 moments", "Somebody archive this", "VOD finna get deleted", "TOS incoming", "Somebody at Twitch HQ watching like...", "Bro risked it all", "No way this real", "He really did that?", "Goated streamer", 
-            "Bro timeless", "Ain’t never seen anything like this", "History being made", "This stream is different", "Bro changed the game", "jah different", "Plaque different", "They not ready for this", "Internet moment", "Everybody watching", "Biggest W of all time",
-            "What’s the game name?", "Who’s stream is this?", "Big flex", "He hit the gritty", "Bro literally cooked", "Mans on fire", "That was legendary", "Chat dead", "This is so chaotic", "Absolute chaos", "clip that immediately", "The timing was perfect", "He dropped a banger", "Biggest L in history", 
-            "Bro's aiming for the stars", "That’s a W play", "Legendary move", "Jah might be invincible", "vro is untouchable", "gotta be trolling", "Game-breaking play", "He’s a different breed", "Can’t be real", "Clip worthy moment", "Bro really outdid himself"
+            "U HEARD DAT NEW NETTSPEND", "we good bro", "Nahhh he really just did that", "Free him", "JAH NEEDS TO COOK", "Packwatch 💀", "This chat too funny", "Song name?", "On god", "Nah cause why he do that", "That's crazy", "No kizzy", "Fax no printer", "He lowkey spitting", "Highkey a L", "Ratio", 
+            "Mods wake up", "I'm crying", "BAHAHAHAHA", "That's tough", "Let him cook", "Bro sold", "He moving different", "Certified classic", "That's a heater", "Get sturdy", "Spamming W", "Respectfully nah", "Certified banger", "Clip that", "Put that on TikTok", "Bro cooked himself", "This stream undefeated"
         ];
 
-
-        
         const emotes = {
             "Boy slow down": "boyslowdown.gif",
             "ayaya": "AYAYA.png",
@@ -148,10 +129,28 @@
             "33": "3.png",
             "carson wents": "carsonwents.png"
         };
-        
+
+        const badges = [
+            "moderator.png", "vip.png", "subscriber.png", "prime.png"
+        ];
+
+        function getRandomBadge() {
+            if (Math.random() > 0.7) { // 30% chance to have a badge
+                const badgeImg = document.createElement('img');
+                badgeImg.src = badges[Math.floor(Math.random() * badges.length)];
+                badgeImg.className = 'badge';
+                return badgeImg;
+            }
+            return null;
+        }
+
         function addMessage() {
             const messageElement = document.createElement('div');
             messageElement.className = 'message';
+
+            // Add badge if applicable
+            const badge = getRandomBadge();
+            if (badge) messageElement.appendChild(badge);
 
             const usernameElement = document.createElement('span');
             usernameElement.className = 'username';
@@ -160,26 +159,44 @@
             messageElement.appendChild(usernameElement);
 
             let messageText = messages[Math.floor(Math.random() * messages.length)];
-            if (emotes[messageText]) {
-                const emoteImg = document.createElement('img');
-                emoteImg.src = emotes[messageText];
-                emoteImg.className = 'emote';
-                messageElement.appendChild(emoteImg);
-            } else {
-                const textElement = document.createElement('span');
-                textElement.textContent = messageText;
-                messageElement.appendChild(textElement);
-            }
+            
+            // Split message into parts to handle emotes mixed with text
+            const messageParts = messageText.split(/(\s+)/);
+            messageParts.forEach(part => {
+                if (emotes[part.trim()]) {
+                    const emoteImg = document.createElement('img');
+                    emoteImg.src = emotes[part.trim()];
+                    emoteImg.className = 'emote';
+                    emoteImg.alt = part;
+                    messageElement.appendChild(emoteImg);
+                } else if (part.trim()) {
+                    const textNode = document.createTextNode(part);
+                    messageElement.appendChild(textNode);
+                }
+            });
 
             chat.appendChild(messageElement);
             chat.scrollTop = chat.scrollHeight;
 
-            if (chat.children.length > 20) {
+            // Remove old messages
+            if (chat.children.length > 50) {
                 chat.removeChild(chat.firstChild);
             }
         }
 
-        setInterval(addMessage, Math.floor(Math.random() * 2000) + 1000);
+        // Randomized delay around the base delay for more natural chat
+        function getRandomDelay() {
+            return BASE_DELAY_MS * (0.7 + Math.random() * 0.6); // ±30% variation
+        }
+
+        // Main chat loop
+        function chatLoop() {
+            addMessage();
+            setTimeout(chatLoop, getRandomDelay());
+        }
+
+        // Start the chat
+        chatLoop();
     </script>
 </body>
 </html>
